@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import StartScreenAndRain1 from "./story/StartScreenAndRain1";
-
+// ibm san text
 
 export default function Home() {
     const [isStart, setIsStart] = useState<boolean>(false);

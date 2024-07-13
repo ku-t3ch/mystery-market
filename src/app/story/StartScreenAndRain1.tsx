@@ -51,7 +51,7 @@ export default function StartScreenAndRain1(prop: IProps) {
                         <div className="relative w-[95vw] h-[250px]">
                             <Image src="/mystery-market/assets/mystery-market-logo.png" fill className="object-contain" alt="Mystery Market Logo" />
                         </div>
-                        <button className="px-10 py-2 rounded-lg bg-white bg-opacity-20 shadow-2xl hover:bg-opacity-50" onClick={() => setIsStart(true)}>เริ่มเล่น</button>
+                        <button className="px-10 py-2 rounded-lg bg-white backdrop-blur-sm shadow-2xl hover:bg-opacity-50" onClick={() => setIsStart(true)}>เริ่มเล่น</button>
                     </div>
                     {/* social media */}
                     <div className="flex flex-col items-center h-auto w-full gap-2">
