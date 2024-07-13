@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from '@iconify/react';
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 interface IProps {
     setName: Dispatch<SetStateAction<string>>;
@@ -17,7 +18,15 @@ export default function StartScreenAndRain1(prop: IProps) {
 
     useEffect(() => {
         if (isSubmit) {
-            prop.setName(getName);
+            if (getName === '') {
+                toast("กรุณาใส่ชื่อของเธอด้วยนะ", { type: "error" })
+            } else {
+                prop.setName(getName);
+                toast("เริ่มแล้วนะ", { type: "success" });
+                setIsSubmit(false);
+            }
+        }
+        return () => {
             setIsSubmit(false);
         }
     }, [isSubmit]);
