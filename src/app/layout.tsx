@@ -3,7 +3,7 @@ import { IBM_Plex_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import ClarityScript from "./components/ClarityScript";
 
-const ibm = IBM_Plex_Sans_Thai({ weight: "400", subsets: ["thai"] });
+const ibm = IBM_Plex_Sans_Thai({ weight: ["400", "700"], subsets: ["thai"] });
 
 export const metadata: Metadata = {
   title: "MYSTERY MARKET",
