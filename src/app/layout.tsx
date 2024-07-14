@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import ClarityScript from "./components/ClarityScript";
 
-const inter = Inter({ subsets: ["latin"] });
+const ibm = IBM_Plex_Sans_Thai({ weight: "400", subsets: ["thai"] });
 
 export const metadata: Metadata = {
   title: "MYSTERY MARKET",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " overscroll-none"}>
+      <body className={ibm.className + " overscroll-none"}>
         <ToastContainer />
         <ClarityScript />
         {children}
