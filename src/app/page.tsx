@@ -1,30 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import StartScreenAndRain1 from "./components/StartScreenAndRain1";
 import { story } from "./utils/story";
-import { IStory } from "./interfaces/IStory";
 
 export default function Home() {
     const [getName, setName] = useState<string>('');
     const [currentScene, setCurrentScene] = useState<number>(0);
-    const [getStory, setStory] = useState<IStory>(story[0]);
 
     const goNextScene = () => {
         setCurrentScene(currentScene + 1);
     }
 
-    useEffect(() => {
-        setStory(story[currentScene]);
-
-    }, [currentScene]);
-
-
     return (
         <div className="h-screen w-full text-white bg-black">
             {!getName && <StartScreenAndRain1 setName={setName} />} {/* ให้ผูเล่นกดเริ่มเกมพร้อมกับใส่ชื่อ */}
             {/* พื้นที่จัดการ scenes */}
-            {story.map((item, index) => {
+            {getName && story.map((item, index) => {
                 if (index === currentScene) {
                     return (
                         <div key={index}>
