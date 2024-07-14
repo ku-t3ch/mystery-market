@@ -8,7 +8,7 @@ export const story: IStory[] = [
         "title": "บทนำ",
         "story": "ท่ามกลามพายุฝนที่โหมซัดกระหน่ำ<br/>เสียงพ่อค้าแม่ค้าเจื้อยแจ้วตลอดทาง<br/>ผู้คนเร่งรีบกลับบ้านในยามค่ำคืน<br/>............<br/>คุณพึ่งเสร็จจากการทำงาน<br/>เดินทางกลับบ้านด้วยใบหน้าที่เหนื่อยล้า.<br/>เหมือนเดิมทุกๆวัน อย่างไร้จุดหมาย....<br/>และในที่สุดก็กลับมาถึงบ้าน",
         "choice": null,
-        "backgound": "/mystery-market/assets/background/rainbackground.mp4"
+        "background": "/mystery-market/assets/background/rainbackground.mp4"
     },
     {
         "scene_id": 1,
@@ -21,7 +21,7 @@ export const story: IStory[] = [
             "ห้องที่จัดระเบียบแบ่งเป็นหมวดหมู่",
             "ห้องที่บรรยากาศเงียบสงบ"
         ],
-        "backgound": "/mystery-market/assets/background/roombgdark.jpg"
+        "background": "/mystery-market/assets/background/roombgdark.jpg"
     },
     {
         "scene_id": 2,
@@ -31,6 +31,6 @@ export const story: IStory[] = [
             "เล่นเกมออนไลน์กับเพื่อน วันนี้ต้องชนะ!",
             "นั่งเล่นโทรศัพท์คนเดียว ที่โซฟาตัวโปรด"
         ],
-        "backgound": "/mystery-market/assets/background/roombgdark.jpg"
+        "background": "/mystery-market/assets/background/roombgdark.jpg"
     }
 ]
