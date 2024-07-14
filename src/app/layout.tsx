@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_Thai } from "next/font/google";
 import "./globals.css";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import ClarityScript from "./components/ClarityScript";
 
 const ibm = IBM_Plex_Sans_Thai({ weight: "400", subsets: ["thai"] });
@@ -20,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ibm.className + " overscroll-none"}>
-        <ToastContainer />
         <ClarityScript />
         {children}
       </body>
