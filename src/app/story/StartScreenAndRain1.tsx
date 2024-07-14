@@ -37,18 +37,18 @@ export default function StartScreenAndRain1(prop: IProps) {
                 muted
                 className="absolute object-cover w-full h-full"
             >
-                <source src="/mystery-market/assets/rainbackground.mp4" type="video/mp4" />
+                <source src="/mystery-market/assets/background/rainbackground.mp4" type="video/mp4" />
             </video>
             <div className="relative flex flex-col items-center justify-between h-full w-full py-4">
                 {!isStart ? <>
                     {/* logo */}
                     <div className="flex flex-col items-center justify-center h-auto w-full">
-                        <Image src="/mystery-market/assets/KUTechWhite 1.png" width={60} height={60} alt="KUTech Logo" />
+                        <Image src="/mystery-market/assets/images/KUTechWhite 1.png" width={60} height={60} alt="KUTech Logo" />
                     </div>
                     {/* ชื่อเกม */}
                     <div className="flex flex-col items-center justify-center h-full w-full">
                         <div className="relative w-[95vw] h-[250px]">
-                            <Image src="/mystery-market/assets/mystery-market-logo.png" fill className="object-contain" alt="Mystery Market Logo" />
+                            <Image src="/mystery-market/assets/images/mystery-market-logo.png" fill className="object-contain" alt="Mystery Market Logo" />
                         </div>
                         <button className="px-10 py-2 rounded-lg bg-white/30 backdrop-blur-sm shadow-2xl" onClick={() => setIsStart(true)}>เริ่มเล่น</button>
                     </div>

@@ -20,7 +20,7 @@ export default function Home() {
         <div className="h-screen w-full text-white bg-black">
             {!getName && <StartScreenAndRain1 setName={setName} />} {/* ให้ผูเล่นกดเริ่มเกมพร้อมกับใส่ชื่อ */}
             {/* พื้นที่จัดการ scenes */}
-            {getName}
+            {getName} {isStart? "hhh": "xxx"}
 
         
         </div>
