@@ -3,5 +3,6 @@ export interface IStory {
   title: string | null;
   story: string | null;
   choice: string[] | null;
+  poster?: string;
   background: string;
 }
