@@ -5,6 +5,7 @@ import UserEnterName from "../components/storys/3";
 
 // ในกรณีที่ต้องที่ choice มีการเช็คเงื่อนไข ให้ทำการสร้าง component ใส่ children
 // tip: กรณีท่่ี่พื้นหลังเป็น .mp4 ให้ทำการ hardcode ที่ page หลักเลย ตามตัวอย่างที่ทำไว้ (หรือมีวิธีที่ดีกว่าก็ฝากทำด้วยขอบใจ)
+// tip: ถ้าจะใช้ tailwind ให้ใช้ class แทน className :)
 
 export const story: IStory[] = [
     {
@@ -23,7 +24,7 @@ export const story: IStory[] = [
     },
     {
         scene_id: 3,
-        title: "บทนำ",
+        title: "<p class='text-primary-blue'>บทนำ</p>",
         story: "ท่ามกลามพายุฝนที่โหมซัดกระหน่ำ<br />เสียงพ่อค้าแม่ค้าเจื้อยแจ้วตลอดทาง<br />ผู้คนเร่งรีบกลับบ้านในยามค่ำคืน<br />............<br />คุณพึ่งเสร็จจากการทำงาน<br />เดินทางกลับบ้านด้วยใบหน้าที่เหนื่อยล้า.<br />เหมือนเดิมทุกๆวัน อย่างไร้จุดหมาย....<br />และในที่สุดก็กลับมาถึงบ้าน",
         poster: "/mystery-market/assets/background/rainbackground.png",
         go: 4

@@ -23,7 +23,7 @@ export default function UserEnterName() {
                     <p>ยินดีที่ได้รู้จัก</p>
                     <p>เธอชื่ออะไรหรอ...</p>
                 </p>
-                <input type="text" value={getName} className="bg-transparent rounded-xl text-center backdrop-filter backdrop-blur-lg shadow-sm shadow-black/15 py-2 px-4 focus:outline-none focus:border-white" placeholder="กรุณากรอกชื่อเล่น" onChange={(e) => setName(e.target.value)}/>
+                <input type="text" value={getName} className="bg-gray-400 bg-opacity-40 rounded-xl text-center shadow-sm shadow-black/15 py-2 px-4 focus:outline-none focus:border-white placeholder:text-white" placeholder="กรุณากรอกชื่อเล่น" onChange={(e) => setName(e.target.value)}/>
                 <button onClick={onNextSceneButton} className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-2 py-2 px-8 bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 border">
                     <span>ถัดไป</span>
                     <Icon icon="ic:baseline-navigate-next" className="border bg-white text-black rounded-full hover:cursor-pointer" />

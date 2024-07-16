@@ -3,6 +3,7 @@ import { story } from "../utils/story";
 import Image from "next/image";
 import { useLocalStorage } from "usehooks-ts";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import ReactAudioPlayer from 'react-audio-player';
 
 const Story = () => {
     const [getName, setName] = useLocalStorage<string>("name", '');
@@ -25,6 +26,11 @@ const Story = () => {
     };
 
     useEffect(() => {
+        const audio = document.getElementById('audio') as HTMLAudioElement;
+        audio.play();
+    }, [currentScene]);
+
+    useEffect(() => {
         // อย่าลืมลบ
         setCurrentScene(0);
         setName('');
@@ -32,6 +38,16 @@ const Story = () => {
     }, []);
     return (
         <>
+            {/* audio */}
+            <ReactAudioPlayer
+                id = "audio"
+                src="/mystery-market/assets/audio/Le Cygne (The Swan).mp3"
+                autoPlay
+                loop
+                // controls
+            />
+
+
             {/* video background */}
             {(currentScene <= 5) && <video /* hardcode พื้นหลัง video rainbackground.mp4 */
                 autoPlay
@@ -47,22 +63,7 @@ const Story = () => {
                 const isCurrentScene = currentScene === item.scene_id;
                 return (
                     <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? '' : 'hidden'}`}>
-                        {/* {item.background?.includes('.mp4') ? (
-                            <video
-                                autoPlay
-                                loop
-                                muted
-                                className="absolute object-cover w-full h-[calc(100dvh)] inset-0"
-                                poster={item.poster}
-                            >
-                                <source src={item.background} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        ) : (
-                            <div className="absolute object-cover w-full h-[calc(100dvh)] inset-0">
-                                <Image priority src={item.background!} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
-                            </div>
-                        )} */}
+                  
                         {item.background && <div className="absolute object-cover max-w-md w-full h-[calc(100dvh)] inset-0 right-0 left-0 m-auto">
                             <Image priority src={item.background!} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
                         </div>}
