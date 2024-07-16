@@ -14,12 +14,12 @@ export default function Home() {
     };
 
     return (
-        <div className="h-screen w-full text-white bg-black">
+        <div className="h-[calc(100dvh)] w-full text-white bg-black">
             {!getName ? <StartScreenAndRain1 setName={setName} /> : <>
                 {getName && story.map((item, index) => {
                     const isCurrentScene = currentScene === index;
                     return (
-                        <div key={index} className={`min-h-screen w-full ${isCurrentScene ? '' : 'hidden'}`}>
+                        <div key={index} className={`h-[calc(100dvh)] w-full ${isCurrentScene ? '' : 'hidden'}`}>
                             {item.background.includes('.mp4') ? (
                                 <video
                                     autoPlay
@@ -36,7 +36,7 @@ export default function Home() {
                                     <Image priority src={item.background} fill alt="background" className="object-cover w-full h-full" />
                                 </div>
                             )}
-                            <div className="relative flex flex-col items-center justify-center h-screen w-full px-3 mb-8 text-center">
+                            <div className="relative flex flex-col items-center justify-center h-[calc(100dvh)] w-full px-3 mb-8 text-center">
                                 <div className="bg-gray-400 backdrop-filter backdrop-blur-sm bg-opacity-10 shadow-sm shadow-black/20 w-full p-6 rounded-xl">
                                     <div dangerouslySetInnerHTML={{ __html: item.title || '' }} className="font-extrabold pt-4" onClick={goNextScene} />
                                     <div dangerouslySetInnerHTML={{ __html: item.story || '' }} onClick={goNextScene} className="p-4" />

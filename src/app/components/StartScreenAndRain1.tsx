@@ -35,18 +35,18 @@ export default function StartScreenAndRain1(prop: IProps) {
                 autoPlay
                 loop
                 muted
-                className="absolute object-cover w-full h-full"
+                className="absolute object-cover w-full h-[calc(100dvh)]"
             >
                 <source src="/mystery-market/assets/background/rainbackground.mp4" type="video/mp4" />
             </video>
-            <div className="relative flex flex-col items-center justify-between h-full w-full py-4 left-0 right-0 top-0 bottom-0">
+            <div className="relative flex flex-col items-center justify-between h-[calc(100dvh)] w-full py-4">
                 {!isStart ? <>
                     {/* logo */}
                     <div className="flex flex-col items-center justify-center h-auto w-full">
                         <Image src="/mystery-market/assets/images/KUTechWhite 1.png" width={60} height={60} alt="KUTech Logo" />
                     </div>
                     {/* ชื่อเกม */}
-                    <div className="flex flex-col items-center justify-center h-full w-full">
+                    <div className="flex flex-col items-center justify-center h-[calc(100dvh)] w-full">
                         <div className="relative w-[95vw] h-[250px]">
                             <Image src="/mystery-market/assets/images/mystery-market-logo.png" fill className="object-contain" alt="Mystery Market Logo" />
                         </div>
