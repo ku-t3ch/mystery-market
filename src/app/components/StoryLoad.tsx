@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 const Story = () => {
     const [getName, setName] = useLocalStorage<string>("name", '');
     const [currentScene, setCurrentScene] = useLocalStorage<number>("scene", 0);
-    const [screenKeep, setScreenKeep] = useLocalStorage<number[]>('screenKeep', []);
+    const [screenKeep, setScreenKeep] = useLocalStorage<number[]>('screenKeep', [0]);
 
     const goToScene = (scene_id: number | null) => {
         if (scene_id) { 
@@ -28,7 +28,7 @@ const Story = () => {
         // อย่าลืมลบ
         setCurrentScene(0);
         setName('');
-        setScreenKeep([]);
+        setScreenKeep([0]);
     }, []);
     return (
         <>
@@ -52,7 +52,7 @@ const Story = () => {
                                 <Image priority src={item.background} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
                             </div>
                         )}
-                        <div className="absolute z-[999] left-8 top-10">
+                        <div className={`absolute z-[999] left-8 top-10 ${currentScene == 0 ? "hidden" : ""}`}>
                             <Icon onClick={goToPreviousScene} icon="ic:baseline-navigate-before" className="bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 rounded-full hover:cursor-pointer text-4xl" />
                         </div>
                         <div className="relative flex flex-col items-center justify-center h-[calc(100dvh)] w-full py-8 text-center" onClick={() => goToScene(item.go)}>
