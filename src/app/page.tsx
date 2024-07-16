@@ -19,21 +19,21 @@ export default function Home() {
                 {getName && story.map((item, index) => {
                     const isCurrentScene = currentScene === index;
                     return (
-                        <div key={index} className={`h-[calc(100dvh)] w-full ${isCurrentScene ? '' : 'hidden'}`}>
+                        <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? '' : 'hidden'}`}>
                             {item.background.includes('.mp4') ? (
                                 <video
                                     autoPlay
                                     loop
                                     muted
-                                    className="absolute object-cover w-full h-full"
+                                    className="absolute object-cover w-full h-[calc(100dvh)] inset-0"
                                     poster="/mystery-market/assets/background/rainbackground.png"
                                 >
                                     <source src={item.background} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
                             ) : (
-                                <div className="absolute object-cover w-full h-full">
-                                    <Image priority src={item.background} fill alt="background" className="object-cover w-full h-full" />
+                                <div className="absolute object-cover w-full h-[calc(100dvh)] inset-0">
+                                    <Image priority src={item.background} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
                                 </div>
                             )}
                             <div className="relative flex flex-col items-center justify-center h-[calc(100dvh)] w-full px-3 mb-8 text-center">

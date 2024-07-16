@@ -35,11 +35,11 @@ export default function StartScreenAndRain1(prop: IProps) {
                 autoPlay
                 loop
                 muted
-                className="absolute object-cover w-full h-[calc(100dvh)]"
+                className="absolute object-cover w-full h-[calc(100dvh)] inset-0"
             >
                 <source src="/mystery-market/assets/background/rainbackground.mp4" type="video/mp4" />
             </video>
-            <div className="relative flex flex-col items-center justify-between h-[calc(100dvh)] w-full py-4">
+            <div className="relative flex flex-col items-center justify-between h-[calc(100dvh)] w-full py-4 inset-0">
                 {!isStart ? <>
                     {/* logo */}
                     <div className="flex flex-col items-center justify-center h-auto w-full">
