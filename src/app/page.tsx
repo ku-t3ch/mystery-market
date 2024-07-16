@@ -19,7 +19,7 @@ export default function Home() {
                 {getName && story.map((item, index) => {
                     const isCurrentScene = currentScene === index;
                     return (
-                        <div key={index} className={`h-screen w-full ${isCurrentScene ? '' : 'hidden'}`}>
+                        <div key={index} className={`min-h-screen w-full ${isCurrentScene ? '' : 'hidden'}`}>
                             {item.background.includes('.mp4') ? (
                                 <video
                                     autoPlay

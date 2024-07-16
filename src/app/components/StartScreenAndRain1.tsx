@@ -39,7 +39,7 @@ export default function StartScreenAndRain1(prop: IProps) {
             >
                 <source src="/mystery-market/assets/background/rainbackground.mp4" type="video/mp4" />
             </video>
-            <div className="relative flex flex-col items-center justify-between h-full w-full py-4">
+            <div className="relative flex flex-col items-center justify-between h-full w-full py-4 left-0 right-0 top-0 bottom-0">
                 {!isStart ? <>
                     {/* logo */}
                     <div className="flex flex-col items-center justify-center h-auto w-full">
