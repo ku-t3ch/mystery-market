@@ -8,8 +8,8 @@ export interface IStory {
   story?: string | null;
   choice?: IChoice[] | null;
   poster?: string;
-  background: string;
-  go: number | null; // go to scene_id
+  background?: string;
+  go?: number | null; // go to scene_id
   children?: React.ReactNode
   backToIndex?: number | null
 }

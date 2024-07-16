@@ -10,7 +10,7 @@ const Story = () => {
     const [screenKeep, setScreenKeep] = useLocalStorage<number[]>('screenKeep', [0]);
 
     const goToScene = (scene_id: number | null) => {
-        if (scene_id) { 
+        if (scene_id) {
             setCurrentScene(scene_id);
             setScreenKeep([...screenKeep, scene_id]);
         };
@@ -32,11 +32,22 @@ const Story = () => {
     }, []);
     return (
         <>
+            {/* video background */}
+            {(currentScene <= 5) && <video /* hardcode พื้นหลัง video rainbackground.mp4 */
+                autoPlay
+                loop
+                muted
+                className="absolute object-cover max-w-md w-full h-[calc(100dvh)] right-0 left-0 m-auto"
+                poster="/mystery-market/assets/background/rainbackground.png"
+            >
+                <source src="/mystery-market/assets/background/rainbackground.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>}
             {story.map((item, index) => {
                 const isCurrentScene = currentScene === item.scene_id;
                 return (
                     <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? '' : 'hidden'}`}>
-                        {item.background.includes('.mp4') ? (
+                        {/* {item.background?.includes('.mp4') ? (
                             <video
                                 autoPlay
                                 loop
@@ -49,13 +60,19 @@ const Story = () => {
                             </video>
                         ) : (
                             <div className="absolute object-cover w-full h-[calc(100dvh)] inset-0">
-                                <Image priority src={item.background} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
+                                <Image priority src={item.background!} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
                             </div>
-                        )}
+                        )} */}
+                        {item.background && <div className="absolute object-cover max-w-md w-full h-[calc(100dvh)] inset-0 right-0 left-0 m-auto">
+                            <Image priority src={item.background!} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
+                        </div>}
+
+                        {/* back button */}
                         <div className={`absolute z-[999] left-8 top-10 ${currentScene == 0 ? "hidden" : ""}`}>
                             <Icon onClick={goToPreviousScene} icon="ic:baseline-navigate-before" className="bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 rounded-full hover:cursor-pointer text-4xl" />
                         </div>
-                        <div className="relative flex flex-col items-center justify-center h-[calc(100dvh)] w-full py-8 text-center" onClick={() => goToScene(item.go)}>
+
+                        <div className="relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto" onClick={() => goToScene(item.go!)}>
                             {/* logo */}
                             <div className={`flex flex-col items-center justify-center h-auto w-full ${currentScene == 0 ? "hidden" : ""}`}>
                                 <Image src="/mystery-market/assets/images/mystery-market-logo.png" width={100} height={100} alt="Mystery-market Logo" />
@@ -65,8 +82,8 @@ const Story = () => {
                                 {item.children ? item.children :
                                     <>
                                         <div className="pb-8">
-                                            {item.title && <div dangerouslySetInnerHTML={{ __html: item.title || '' }} className="text-xl font-extrabold pt-4" onClick={() => goToScene(item.go)} />}
-                                            {item.story && <div dangerouslySetInnerHTML={{ __html: item.story || '' }} className="p-4" onClick={() => goToScene(item.go)} />}
+                                            {item.title && <div dangerouslySetInnerHTML={{ __html: item.title || '' }} className="text-xl font-extrabold pt-4" onClick={() => goToScene(item.go!)} />}
+                                            {item.story && <div dangerouslySetInnerHTML={{ __html: item.story || '' }} className="p-4" onClick={() => goToScene(item.go!)} />}
                                         </div>
                                         <div className="flex flex-col gap-4 pb-8">
                                             {item.choice && item.choice.map((choice, choiceIndex) => (

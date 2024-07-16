@@ -7,7 +7,7 @@ const StoryLoad = dynamic(() => import("./components/StoryLoad"), { ssr: false }
 
 export default function Home() {
     return (
-        <div className="h-[calc(100dvh)] w-full text-white bg-black">
+        <div className="h-[calc(100dvh)] text-white bg-black">
             <StoryLoad />
         </div>
     );

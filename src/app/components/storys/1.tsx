@@ -13,8 +13,8 @@ export default function Start() {
                 <Image src="/mystery-market/assets/images/KUTechWhite 1.png" width={60} height={60} alt="KUTech Logo" />
             </div>
             {/* ชื่อเกม */}
-            <div className="flex flex-col items-center justify-center h-full w-full">
-                <div className="relative w-[95vw] h-[250px]">
+            <div className="flex flex-col items-center justify-center h-full w-full ">
+                <div className="relative w-[90%] h-[250px]">
                     <Image src="/mystery-market/assets/images/mystery-market-logo.png" fill className="object-contain" alt="Mystery Market Logo" />
                 </div>
                 <button className="px-10 py-2 rounded-lg bg-white/30 backdrop-blur-sm shadow-2xl" onClick={() => setCurrentScene(1)}>เริ่มเล่น</button>
