@@ -55,6 +55,7 @@ const Story = () => {
                 muted
                 className="absolute object-cover max-w-md w-full h-[calc(100dvh)] right-0 left-0 m-auto"
                 poster="/mystery-market/assets/background/rainbackground.png"
+                playsInline
             >
                 <source src="/mystery-market/assets/background/rainbackground.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
