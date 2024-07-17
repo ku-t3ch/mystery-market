@@ -49,7 +49,8 @@ const Story = () => {
 
 
             {/* video background */}
-            {(currentScene <= 5) && <video /* hardcode พื้นหลัง video rainbackground.mp4 */
+            {(currentScene <= 5) && 
+            <video /* hardcode พื้นหลัง video rainbackground.mp4 */
                 autoPlay
                 loop
                 muted
