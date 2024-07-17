@@ -1,7 +1,14 @@
 export interface IChoice {
   title: string;
   go: number // go to scene_id
+  isAlone?: boolean
+  sunflower?: number
+  roses?: number
+  lavender?: number
+  lilly?: number
+  forgetmenot?: number
 }
+
 export interface IStory {
   scene_id: number;
   title?: string | null;
