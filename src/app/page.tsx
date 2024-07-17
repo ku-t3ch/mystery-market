@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const StoryLoad = dynamic(() => import("./components/StoryLoad"), { ssr: false });
+const StoryLoad = dynamic(() => import("../components/StoryLoad"), { ssr: false });
 
 
 export default function Home() {

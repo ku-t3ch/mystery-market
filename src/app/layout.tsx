@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_Thai } from "next/font/google";
 import "./globals.css";
-import ClarityScript from "./components/ClarityScript";
+import ClarityScript from "../components/ClarityScript";
 
 const ibm = IBM_Plex_Sans_Thai({ weight: ["400", "700"], subsets: ["thai"] });
 
