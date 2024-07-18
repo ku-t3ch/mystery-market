@@ -4,6 +4,7 @@ import ButterflyEffect from "../components/storys/2";
 import UserEnterName from "../components/storys/3";
 import Market01 from "../components/storys/15";
 import Market02 from "../components/storys/16";
+import MarketTextField from "@/components/storys/209";
 
 // ในกรณีที่ต้องที่ choice มีการเช็คเงื่อนไข ให้ทำการสร้าง component ใส่ children
 // tip: กรณีท่่ี่พื้นหลังเป็น .mp4 ให้ทำการ hardcode ที่ page หลักเลย ตามตัวอย่างที่ทำไว้ (หรือมีวิธีที่ดีกว่าก็ฝากทำด้วยขอบใจ)
@@ -158,13 +159,102 @@ export const story: IStory[] = [
     background: "/mystery-market/assets/background/roombgdark.jpg",
   },
   {
+    scene_id: 201,
+    story: "เธอจะไม่เข้าไปดูจริงๆเหรอ",
+    choice: [
+      { title: "ไปดูก็ได้", go: 202, roses: 1 },
+      { title: "อยู่ที่เดิม", go: 201.1 },
+    ],
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+  },
+  {
+    scene_id: 201.1,
+    story: "จนกระทั่งสักพัก คุณเริ่มเบื่อ จึงลุกขึ้นแล้วเดินเข้าไป",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 202,
+  },
+  {
     scene_id: 202,
     story: "เมื่อคุณเดินเข้าไป คุณพบกับ....",
     choice: [
-      { title: "สัตว์เลี้ยงที่สภาพมอมแมม", go: 14 },
-      { title: "ความว่างเปล่า", go: 14 },
-      { title: "คุณพบเด็กน้อยกำลังร้องไห้อยู่", go: 14 },
+      { title: "สัตว์เลี้ยงที่สภาพมอมแมม", go: 203 },
+      { title: "ความว่างเปล่า", go: 204 },
+      { title: "คุณพบเด็กน้อยกำลังร้องไห้อยู่", go: 205 },
     ],
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+  },
+  {
+    scene_id: 203,
+    story: "สัตว์สัตว์ตัวนั้นคือ...",
+    choice: [
+      { title: "น้องหมา", go: 206 },
+      { title: "น้องแมว", go: 207 },
+    ],
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+  },
+  {
+    scene_id: 204,
+    story:
+      "หลังจากเหตุการณ์ทุกอย่างจบลง ..........<br />ถึงแม้ว่ามันจะดึกแล้ว<br />แต่คุณยังรู้สึกไม่อยากกลับบ้าน<br />จึงไปนั่งเรือพายชมแสงจันทร์<br />" +
+      "ซึ่งเป็นไฮไลท์ของตลาดน้ำราตรีแห่งนี้อีกครั้ง",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 210,
+  },
+  {
+    scene_id: 205,
+    story: "คุณพบเด็กน้อยกำลังร้องไห้อยู่",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 209,
+  },
+  {
+    scene_id: 206,
+    story:
+      "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องหมาตัวนี้ดี",
+    choice: [
+      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208 },
+      { title: "ไม่เทน้ำให้กิน (ไม่มีน้องหมา)", go: 208 },
+    ],
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+  },
+  {
+    scene_id: 207,
+    story:
+      "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องหมาตัวนี้ดี",
+    choice: [
+      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208 },
+      { title: "ไม่เทน้ำให้กิน (ไม่มีน้องแมว)", go: 208 },
+    ],
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+  },
+  {
+    scene_id: 208,
+    story: "ระหว่างเดินกลับไปที่โต๊ะคุณก็ได้พบกับ",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 205,
+  },
+  {
+    scene_id: 209,
+    children: <MarketTextField />,
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+  },
+  {
+    scene_id: 210,
+    story:
+      "แต่ทว่าคุณกลับรู้สึกง่วงนอนแปลกๆ<br /> ความรู้สึกสุดท้ายที่คุณจำได้คือหนังตาที่เริ่มหย่อนลง <br />ความรู้สึกที่เหมือนตกจากเรือ<br />จมลงสู่แม่น้ำในห้วงลึกด่ำดึ่งลงไป…",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 211,
+  },
+  {
+    scene_id: 211,
+    story:
+      "เมื่อคุณลืมตามาอีกที<br />" +
+      "คุณพบว่า ตัวเองอยู่ในห้วงสายธารแห่งท้องทะเลสีคราม<br />" +
+      "และได้พบกับภูตที่มอบพรวิเศษ 1 ข้อ<br />" +
+      "พรนี้เป็นพรขอบคุณ<br />" +
+      "สำหรับการเดินทางตลาดราตรีแสงจันทร์ในคืนนี้<br />" +
+      "เมื่อคุณเลือกไปแล้ว<br />" +
+      "คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br />" +
+      "เพราะฉะนั้น โปรดเลือกในสิ่งที่คุณปรารถนามากที่สุด",
     background: "/mystery-market/assets/background/roombgdark.jpg",
   },
 ];
