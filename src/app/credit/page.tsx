@@ -99,6 +99,21 @@ export default function Credits() {
                   Phumrapee Soenvanichakul
                 </a>
               </li>
+              <li className="mt-1">
+                <a href="https://www.instagram.com/teerut_1t" className="hover:text-blue-500 text-[#5D3A1A]">
+                  Teerut Srithongdee
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col mt-10 w-full md:w-1/2 items-center">
+            <div className="font-sans text-xl m-2 text-[#5D3A1A] font-bold">Dev Ops</div>
+            <ul className="flex flex-col items-center text-xs">
+              <li>
+                <a href="https://www.instagram.com/teerut_1t" className="hover:text-blue-500 text-[#5D3A1A]">
+                  Teerut Srithongdee
+                </a>
+              </li>
             </ul>
           </div>
           <div className="mt-8 text-center">
