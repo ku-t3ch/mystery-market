@@ -74,6 +74,21 @@ const Story = () => {
         setLilly(0);
         setForgetmenot(0);
     }, []);
+
+    useEffect(() => {
+        // ใส่ชื่อใน story
+        const title = document.getElementById("title" + currentScene);
+        const story = document.getElementById('story' + currentScene);
+
+        if (title && title.innerHTML.includes('{getName}')) {
+            title.innerHTML = title.innerHTML.replace('{getName}', getName);
+            console.log(title.innerHTML);
+        }
+        if (story && story.innerHTML.includes('{getName}')) {
+            story.innerHTML = story.innerHTML.replace('{getName}', getName);
+            console.log(story.innerHTML);
+        }
+    }, [currentScene])
     return (
         <>
             {/* audio */}
@@ -123,8 +138,8 @@ const Story = () => {
                                 {item.children ? item.children :
                                     <>
                                         <div className="pb-8">
-                                            {item.title && <div dangerouslySetInnerHTML={{ __html: item.title || '' }} className="text-xl font-extrabold pt-4" onClick={() => goToScene(item.go!)} />}
-                                            {item.story && <div dangerouslySetInnerHTML={{ __html: item.story || '' }} className="p-4" onClick={() => goToScene(item.go!)} />}
+                                            {item.title && <div id={"title" + item.scene_id} dangerouslySetInnerHTML={{ __html: item.title || '' }} className="text-xl font-extrabold pt-4" onClick={() => goToScene(item.go!)} />}
+                                            {item.story && <div id={"story" + item.scene_id} dangerouslySetInnerHTML={{ __html: item.story || '' }} className="p-4" onClick={() => goToScene(item.go!)} />}
                                         </div>
                                         <div className="flex flex-col gap-4 pb-8">
                                             {item.choice && item.choice.map((choice, choiceIndex) => (
