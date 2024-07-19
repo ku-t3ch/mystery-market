@@ -117,7 +117,7 @@ const Story = () => {
             {story.map((item, index) => {
                 const isCurrentScene = currentScene === item.scene_id;
                 return (
-                    <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? '' : 'hidden'}`}>
+                    <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? 'visible' : 'hidden'}`}>
                   
                         {item.background && <div className="absolute object-cover max-w-md w-full h-[calc(100dvh)] inset-0 right-0 left-0 m-auto">
                             <Image priority src={item.background!} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
