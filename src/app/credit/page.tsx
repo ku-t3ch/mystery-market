@@ -8,7 +8,7 @@ export default function Credits() {
           MYSTERY MARKET
         </h2>
         <div className="flex justify-center">
-          <Image src="/mystery-market/assets/images/mystery-market-logo.png" width={150} height={150} alt="Mystery Market Logo" className="invert"/>
+          <Image src="/mystery-market/assets/images/mystery-market-logo-resize.webp" width={150} height={150} alt="Mystery Market Logo" className="invert"/>
         </div>
         <h1 className="text-sm text-center text-[#8B4513] ">
           Developed by
