@@ -131,7 +131,7 @@ const Story = () => {
                         <div className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto ${isCurrentScene ? 'fadeIn' : 'fadeOut'}`} onClick={() => goToScene(item.go!)}>
                             {/* logo */}
                             <div className={`flex flex-col items-center justify-center h-auto w-full ${currentScene == 0 ? "hidden" : ""}`}>
-                                <Image src="/mystery-market/assets/images/mystery-market-logo.png" width={100} height={100} alt="Mystery-market Logo" />
+                                <Image src="/mystery-market/assets/images/mystery-market-logo-resize.webp" width={100} height={100} alt="Mystery-market Logo" />
                             </div>
                             {/* story */}
                             <div className="flex flex-col items-center justify-center h-full w-full">
