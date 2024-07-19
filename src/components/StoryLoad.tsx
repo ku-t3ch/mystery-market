@@ -94,7 +94,7 @@ const Story = () => {
             {/* audio */}
             <ReactAudioPlayer
                 id = "audio"
-                src="/mystery-market/assets/audio/Le Cygne (The Swan).mp3"
+                src="/mystery-market/assets/audio/Le Cygne (The Swan) Resize.mp3"
                 autoPlay
                 loop
                 // controls
@@ -117,7 +117,7 @@ const Story = () => {
             {story.map((item, index) => {
                 const isCurrentScene = currentScene === item.scene_id;
                 return (
-                    <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? 'visible' : 'hidden'}`}>
+                    <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? '' : 'hidden'}`}>
                   
                         {item.background && <div className="absolute object-cover max-w-md w-full h-[calc(100dvh)] inset-0 right-0 left-0 m-auto">
                             <Image priority src={item.background!} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
@@ -128,7 +128,7 @@ const Story = () => {
                             <Icon onClick={goToPreviousScene} icon="ic:baseline-navigate-before" className="bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 rounded-full hover:cursor-pointer text-4xl" />
                         </div>
 
-                        <div className="relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto" onClick={() => goToScene(item.go!)}>
+                        <div className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto ${isCurrentScene ? 'fadeIn' : 'fadeOut'}`} onClick={() => goToScene(item.go!)}>
                             {/* logo */}
                             <div className={`flex flex-col items-center justify-center h-auto w-full ${currentScene == 0 ? "hidden" : ""}`}>
                                 <Image src="/mystery-market/assets/images/mystery-market-logo.png" width={100} height={100} alt="Mystery-market Logo" />
