@@ -60,6 +60,7 @@ RUN yarn global add pnpm && pnpm i
 
 FROM base AS builder
 WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN yarn global add pnpm && SKIP_ENV_VALIDATION=1 pnpm run build
 
