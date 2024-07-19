@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "standalone",
+    output: "export",
     swcMinify: true,
     basePath: "/mystery-market",
     env: {

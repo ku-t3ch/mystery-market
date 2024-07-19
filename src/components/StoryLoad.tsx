@@ -120,7 +120,7 @@ const Story = () => {
                     <div key={index} className={`h-[calc(100dvh)] inset-0 w-full ${isCurrentScene ? '' : 'hidden'}`}>
                   
                         {item.background && <div className="absolute object-cover max-w-md w-full h-[calc(100dvh)] inset-0 right-0 left-0 m-auto">
-                            <Image priority src={item.background!} fill alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
+                            <img src={item.background!} alt="background" className="object-cover w-full h-[calc(100dvh)] inset-0" />
                         </div>}
 
                         {/* back button */}
@@ -131,7 +131,7 @@ const Story = () => {
                         <div className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto ${isCurrentScene ? 'fadeIn' : 'fadeOut'}`} onClick={() => goToScene(item.go!)}>
                             {/* logo */}
                             <div className={`flex flex-col items-center justify-center h-auto w-full ${currentScene == 0 ? "hidden" : ""}`}>
-                                <Image src="/mystery-market/assets/images/mystery-market-logo-resize.webp" width={100} height={100} alt="Mystery-market Logo" />
+                                <img src="/mystery-market/assets/images/mystery-market-logo-resize.webp" width={100} height={100} alt="Mystery-market Logo" />
                             </div>
                             {/* story */}
                             <div className="flex flex-col items-center justify-center h-full w-full">

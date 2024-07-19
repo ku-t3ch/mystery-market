@@ -8,13 +8,13 @@ export default function Credits() {
           MYSTERY MARKET
         </h2>
         <div className="flex justify-center">
-          <Image src="/mystery-market/assets/images/mystery-market-logo-resize.webp" width={150} height={150} alt="Mystery Market Logo" className="invert"/>
+          <img src="/mystery-market/assets/images/mystery-market-logo-resize.webp" width={150} height={150} alt="Mystery Market Logo" className="invert"/>
         </div>
         <h1 className="text-sm text-center text-[#8B4513] ">
           Developed by
         </h1>
         <div className="flex justify-center">
-          <a href="https://tech.nisit.ku.ac.th/"><Image src="/mystery-market/assets/images/KUTechBlack.png" width={150} height={150} alt="Kurechii Logo" /></a>
+          <a href="https://tech.nisit.ku.ac.th/"><img src="/mystery-market/assets/images/KUTechBlack.png" width={150} height={150} alt="Kurechii Logo" /></a>
         </div>
         <div className="flex flex-col items-center">
           <div className="flex flex-col mt-10 w-full md:w-1/2 items-center">
