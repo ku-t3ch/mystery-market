@@ -66,7 +66,7 @@ RUN yarn global add pnpm && SKIP_ENV_VALIDATION=1 pnpm run build
 FROM nginx:alpine AS runner
 WORKDIR /app
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/out /usr/share/nginx/html
+COPY --from=builder /app/out /usr/share/nginx/html
 EXPOSE 3000
 
 
