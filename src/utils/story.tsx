@@ -30,7 +30,7 @@ export const story: IStory[] = [
         scene_id: 3,
         title: "<p class='text-primary-blue'>บทนำ</p>",
         story: "ท่ามกลามพายุฝนที่โหมซัดกระหน่ำ<br />เสียงพ่อค้าแม่ค้าเจื้อยแจ้วตลอดทาง<br />ผู้คนเร่งรีบกลับบ้านในยามค่ำคืน<br />............<br />คุณพึ่งเสร็จจากการทำงาน<br />เดินทางกลับบ้านด้วยใบหน้าที่เหนื่อยล้า.<br />เหมือนเดิมทุกๆวัน อย่างไร้จุดหมาย....<br />และในที่สุดก็กลับมาถึงบ้าน",
-        poster: "/mystery-market/assets/background/rainbackground.png",
+        poster: "/mystery-market/assets/background/rainbackground-resize.webp",
         go: 4
     },
     {
