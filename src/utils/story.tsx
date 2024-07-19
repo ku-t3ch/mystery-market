@@ -68,7 +68,7 @@ export const story: IStory[] = [
     },
     {
         scene_id: 8,
-        story: "เพื่อนของคุณทักคุณมา<br/>เฮ้...{getname} ไปเที่ยวตลาดน้ำกัน",
+        story: "เพื่อนของคุณทักคุณมา<br/>เฮ้...{getName} ไปเที่ยวตลาดน้ำกัน",
         choice: [
             { title: "ตอบข้อความ", go: 10 }, 
             { title: "ไม่ตอบข้อความ", go: 9 }, // bad ending
