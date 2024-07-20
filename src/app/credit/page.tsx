@@ -8,7 +8,7 @@ export default function Credits() {
           MYSTERY MARKET
         </h2>
         <div className="flex justify-center">
-          <Image src="/mystery-market/assets/images/mystery-market-logo.png" width={150} height={150} alt="Mystery Market Logo" className="invert"/>
+          <Image src="/mystery-market/assets/images/mystery-market-logo-resize.webp" width={150} height={150} alt="Mystery Market Logo" className="invert"/>
         </div>
         <h1 className="text-sm text-center text-[#8B4513] ">
           Developed by
@@ -97,6 +97,21 @@ export default function Credits() {
               <li>
                 <a href="https://www.instagram.com/prpswa_?igsh=MWVvNGhhY3o1YW56OQ==" className="hover:text-blue-500 text-[#5D3A1A]">
                   Phumrapee Soenvanichakul
+                </a>
+              </li>
+              <li className="mt-1">
+                <a href="https://www.instagram.com/teerut_1t" className="hover:text-blue-500 text-[#5D3A1A]">
+                  Teerut Srithongdee
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col mt-10 w-full md:w-1/2 items-center">
+            <div className="font-sans text-xl m-2 text-[#5D3A1A] font-bold">Dev Ops</div>
+            <ul className="flex flex-col items-center text-xs">
+              <li>
+                <a href="https://www.instagram.com/teerut_1t" className="hover:text-blue-500 text-[#5D3A1A]">
+                  Teerut Srithongdee
                 </a>
               </li>
             </ul>
