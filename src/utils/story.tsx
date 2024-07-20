@@ -211,7 +211,7 @@ export const story: IStory[] = [
     story:
       "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องหมาตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208 },
+      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208, dog: 1 },
       { title: "ไม่เทน้ำให้กิน (ไม่มีน้องหมา)", go: 208 },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
@@ -221,7 +221,7 @@ export const story: IStory[] = [
     story:
       "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องหมาตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208 },
+      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208, cat: 1 },
       { title: "ไม่เทน้ำให้กิน (ไม่มีน้องแมว)", go: 208 },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
@@ -256,5 +256,15 @@ export const story: IStory[] = [
       "คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br />" +
       "เพราะฉะนั้น โปรดเลือกในสิ่งที่คุณปรารถนามากที่สุด",
     background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 212,
   },
+  {
+    scene_id: 212,
+    story: "",
+    choice: [
+      { title: "ขออยู่ในโลกแห่งความฝันและจินตนาการไม่มีกาลเวลา ไม่มีกฏเกณฑ์ควบคุม", go: 213 },
+      { title: "ขออยู่ในโลกแห่งความเป็นจริงโดยมีชีวิตที่มั่นคงและได้ทุกอย่างในสิ่งที่มุ่งหวั่ง", go: 214 },
+    ],
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+  }
 ];

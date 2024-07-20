@@ -17,6 +17,8 @@ const Story = () => {
     const [lavender, setLavender] = useLocalStorage<number>('lavender', 0);
     const [lilly, setLilly] = useLocalStorage<number>('lilly', 0);
     const [forgetmenot, setForgetmenot] = useLocalStorage<number>('forgetmenot', 0);
+    const [dog, setDog] = useLocalStorage<number>('dog', 0);
+    const [cat, setCat] = useLocalStorage<number>('cat', 0);
     
 
     const goToScene = (scene_id: number | null) => {
@@ -53,6 +55,12 @@ const Story = () => {
         }
         if (choice.forgetmenot != null) {
             setForgetmenot(forgetmenot + choice.forgetmenot);
+        }
+        if (choice.dog != null) {
+            setDog(dog + choice.dog);
+        }
+        if (choice.cat != null) {
+            setCat(cat + choice.cat);
         }
         goToScene(choice.go);
     }
