@@ -81,6 +81,8 @@ const Story = () => {
         setLavender(0);
         setLilly(0);
         setForgetmenot(0);
+        setDog(0);
+        setCat(0);
     }, []);
 
     useEffect(() => {

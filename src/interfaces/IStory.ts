@@ -9,7 +9,6 @@ export interface IChoice {
   forgetmenot?: number
   dog? : number
   cat? : number
-
 }
 
 export interface IStory {
