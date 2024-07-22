@@ -39,7 +39,7 @@ export default function LilyPage() {
         <div className="flex justify-center flex-col w-full">
           <div className="flex  h-[114px] left-[258px] top-[387px]   mb-4  justify-center p-5 gap-5">
             
-            <div className="flex flex-col w-[130px] h-[54px] left-[18px] top-[399px]  text-center text-zinc-800 text-[64px] font-normal  leading-[96px] mr-20 ">
+            <div className="flex flex-col w-[130px] h-[54px] left-[18px] top-[399px]  text-center text-zinc-800  text-3xl font-normal  leading-[96px] mr-20 ">
               <p className={title.className}>{pageTitle}</p>
               <br />
             </div>
