@@ -25,12 +25,12 @@ const Story = () => {
   const [dog, setDog] = useLocalStorage<number>("dog", 0);
   const [cat, setCat] = useLocalStorage<number>("cat", 0);
 
-  const goToScene = (scene_id: number | null) => {
-    if (scene_id != null) {
-      setCurrentScene(scene_id);
-      setScreenKeep([...screenKeep, scene_id]);
-    }
-  };
+    const goToScene = (scene_id: number | null) => {
+        if (scene_id != null) {
+            setCurrentScene(scene_id);
+            setScreenKeep([...screenKeep, scene_id]);
+        };
+    };
 
   const goToPreviousScene = () => {
     if (screenKeep.length > 1) {
