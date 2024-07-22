@@ -20,7 +20,7 @@ export const story: IStory[] = [
   {
     scene_id: 1,
     children: <ButterflyEffect />,
-    go: 301,
+    go: 2,
   },
   {
     scene_id: 2,
