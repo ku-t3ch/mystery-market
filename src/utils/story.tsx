@@ -33,7 +33,7 @@ export const story: IStory[] = [
     title: "<p class='text-primary-blue'>บทนำ</p>",
     story:
       "ท่ามกลามพายุฝนที่โหมซัดกระหน่ำ<br />เสียงพ่อค้าแม่ค้าเจื้อยแจ้วตลอดทาง<br />ผู้คนเร่งรีบกลับบ้านในยามค่ำคืน<br />............<br />คุณพึ่งเสร็จจากการทำงาน<br />เดินทางกลับบ้านด้วยใบหน้าที่เหนื่อยล้า.<br />เหมือนเดิมทุกๆวัน อย่างไร้จุดหมาย....<br />และในที่สุดก็กลับมาถึงบ้าน",
-    poster: "/mystery-market/assets/background/rainbackground.png",
+    poster: "/mystery-market/assets/background/rainbackground-resize.webp",
     go: 4,
   },
   {
@@ -55,18 +55,18 @@ export const story: IStory[] = [
       { title: "เล่นเกมออนไลน์กับเพื่อน วันนี้ต้องชนะ!", go: 7 },
       { title: "นั่งเล่นโทรศัพท์คนเดียว ที่โซฟาตัวโปรด", go: 6 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
   {
     scene_id: 6,
-    story: "ขณะที่คุณเล่นโทรศัพท์อยู<br/>จู่ๆก็มีข้อความเด้งขึ้นมา",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    story: "ขณะที่คุณเล่นโทรศัพท์อยู่<br/>จู่ๆก็มีข้อความเด้งขึ้นมา",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
     go: 8,
   },
   {
     scene_id: 7,
     story: "ขณะที่คุณเล่นเกมบนคอมพิวเตอร์<br/>จู่ๆก็มีข้อความเด้งขึ้นมา",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
     go: 8,
   },
   {
@@ -76,7 +76,7 @@ export const story: IStory[] = [
       { title: "ตอบข้อความ", go: 10 },
       { title: "ไม่ตอบข้อความ", go: 9 }, // bad ending
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
   {
     scene_id: 9, // ending
@@ -99,7 +99,7 @@ export const story: IStory[] = [
         isAlone: true,
       }, // introvert
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
   {
     scene_id: 11,
@@ -116,13 +116,13 @@ export const story: IStory[] = [
       { title: "นาฬิกาอิเล็กทรอนิกส์ตั้งเตือนความจำ", go: 12, lilly: 1 },
       { title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ", go: 12, forgetmenot: 1 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
   {
     scene_id: 12,
     story:
       "หลังจากที่เห็นของที่น่าสนใจแล้ว<br/>คุณจึงตัดสินใจที่จะไปเยี่ยมชมตลาดน้ำแห่งนี้<br/>แล้วเดินทางไปตลาดนำ้คนเดียว",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
     go: 15,
   },
   {
@@ -140,19 +140,19 @@ export const story: IStory[] = [
       { title: "นาฬิกาอิเล็กทรอนิกส์ตั้งเตือนความจำ", go: 14, lilly: 1 },
       { title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ", go: 14, forgetmenot: 1 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
   {
     scene_id: 14,
     story:
       "หลังจากที่เห็นของที่น่าสนใจแล้ว<br/>คุณจึงตัดสินใจนัดเวลาและจุดนัดพบ<br/>แล้วเดินทางไปตลาดน้ำกับเพื่อนคุณ",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
     go: 15,
   },
   {
     scene_id: 15,
     children: <Market01 />,
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
   {
     scene_id: 16,
