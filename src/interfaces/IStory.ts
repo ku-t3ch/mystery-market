@@ -7,6 +7,8 @@ export interface IChoice {
   lavender?: number
   lilly?: number
   forgetmenot?: number
+  dog? : number
+  cat? : number
 }
 
 export interface IStory {
