@@ -7,6 +7,7 @@ import Market02 from "../components/storys/16";
 import MarketTextField from "@/components/storys/209";
 import PreEnding from "@/components/storys/314";
 import PreAloneEnding from "@/components/storys/215";
+import EndingNote from "@/components/storys/225";
 
 // ในกรณีที่ต้องที่ choice มีการเช็คเงื่อนไข ให้ทำการสร้าง component ใส่ children
 // tip: กรณีท่่ี่พื้นหลังเป็น .mp4 ให้ทำการ hardcode ที่ page หลักเลย ตามตัวอย่างที่ทำไว้ (หรือมีวิธีที่ดีกว่าก็ฝากทำด้วยขอบใจ)
@@ -300,7 +301,7 @@ export const story: IStory[] = [
     story:
       "คุณตื่นมาในร่างเด็กตัวเล็กคนหนึ่ง<br />อยู่ในห้องนอนเพียงลำพัง<br />ไร้เสียงของสิ่งมีชีวิตใดๆ<br />แสงรำไรส่องกระทบผ่านเปียโนตัวโปรด<br />" +
       "คุณดื่มด่ำไปกับภาพตรงหน้าและคิดว่าจะทำอย่างไรต่อดี",
-    go: 225,
+    go: 224,
   },
   {
     scene_id: 217,
@@ -321,8 +322,16 @@ export const story: IStory[] = [
     go: 225,
   },
   {
+    scene_id: 224,
+    story: "คุณลุกขึ้นมาและพบแค่ดอกไม้ 1 ดอกที่วางไว้อยู่บนโต๊ะ",
+  },
+  {
     scene_id: 225,
-    children: <div></div>,
+    children: <EndingNote />,
+  },
+  {
+    scene_id: 226,
+    title: "แปลงดอกไม้",
   },
   {
     scene_id: 301,
