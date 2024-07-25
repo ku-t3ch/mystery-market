@@ -9,12 +9,12 @@ export default function MarketTextField() {
     "screenKeep",
     []
   );
-
-  // TODO: Save message, loading UI
+  const [messageStore, setMessageStorage] = useLocalStorage<string>("message", "");
 
   const onNextSceneButton = () => {
     const nextScene = 204;
     if (message) {
+      setMessageStorage(message);
       setCurrentScene(nextScene);
       setScreenKeep([...screenKeep, nextScene]);
     }

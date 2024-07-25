@@ -24,6 +24,7 @@ const Story = () => {
   );
   const [dog, setDog] = useLocalStorage<number>("dog", 0);
   const [cat, setCat] = useLocalStorage<number>("cat", 0);
+  const [selectedAnimal, setSelectedAnimal] = useLocalStorage<string>("selectedAnimal", "");
 
     const goToScene = (scene_id: number | null) => {
         if (scene_id != null) {
@@ -65,6 +66,9 @@ const Story = () => {
     }
     if (choice.cat != null) {
       setCat(cat + choice.cat); // function แมว
+    }
+    if (choice.selectedAnimal != null) {
+      setSelectedAnimal(choice.selectedAnimal);
     }
     goToScene(choice.go);
   };

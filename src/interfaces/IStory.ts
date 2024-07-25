@@ -7,6 +7,7 @@ export interface IChoice {
   lavender?: number
   lilly?: number
   forgetmenot?: number
+  selectedAnimal?: string
   dog? : number
   cat? : number
 }
