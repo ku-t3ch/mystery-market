@@ -4,17 +4,37 @@ import Image from "next/image";
 import { useLocalStorage } from "usehooks-ts";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ReactAudioPlayer from "react-audio-player";
-import { IChoice } from "../interfaces/IStory";
+import { IChoice, IStateKeep } from "../interfaces/IStory";
+import CopyRight from "./CopyRight";
 
 const Story = () => {
   const [getName, setName] = useLocalStorage<string>("name", "");
   const [currentScene, setCurrentScene] = useLocalStorage<number>("scene", 0);
-  const [screenKeep, setScreenKeep] = useLocalStorage<number[]>("screenKeep", [
-    0,
-  ]);
+  const [screenKeep, setScreenKeep] = useLocalStorage<IStateKeep[]>(
+    "screenKeep",
+    [
+      {
+        scene_id: 0,
+        getName: "",
+        isAlone: true,
+        sunflower: 0,
+        roses: 0,
+        lavender: 0,
+        lilly: 0,
+        forgetmenot: 0,
+        dog: false,
+        cat: false,
+        selectedAnimal: "",
+        firstFlower: "",
+      },
+    ]
+  );
 
   const [isAlone, setIsAlone] = useLocalStorage<boolean>("isAlone", true);
-  const [firstFlower, setFirstFlower] = useLocalStorage<string>("firstFlower", "");
+  const [firstFlower, setFirstFlower] = useLocalStorage<string>(
+    "firstFlower",
+    ""
+  );
   const [sunflower, setSunflower] = useLocalStorage<number>("sunflower", 0);
   const [roses, setRoses] = useLocalStorage<number>("roses", 0);
   const [lavender, setLavender] = useLocalStorage<number>("lavender", 0);
@@ -23,22 +43,53 @@ const Story = () => {
     "forgetmenot",
     0
   );
-  const [dog, setDog] = useLocalStorage<number>("dog", 0);
-  const [cat, setCat] = useLocalStorage<number>("cat", 0);
-  const [selectedAnimal, setSelectedAnimal] = useLocalStorage<string>("selectedAnimal", "");
+  const [dog, setDog] = useLocalStorage<boolean>("dog", false);
+  const [cat, setCat] = useLocalStorage<boolean>("cat", false);
+  const [selectedAnimal, setSelectedAnimal] = useLocalStorage<string>(
+    "selectedAnimal",
+    ""
+  );
 
-    const goToScene = (scene_id: number | null) => {
-        if (scene_id != null) {
-            setCurrentScene(scene_id);
-            setScreenKeep([...screenKeep, scene_id]);
-        };
-    };
+  const goToScene = (scene_id: number | null) => {
+    if (scene_id != null) {
+      setCurrentScene(scene_id);
+      setScreenKeep((prevScreenKeep) => [
+        ...prevScreenKeep,
+        {
+          scene_id,
+          getName,
+          isAlone,
+          sunflower,
+          roses,
+          lavender,
+          lilly,
+          forgetmenot,
+          dog,
+          cat,
+          selectedAnimal,
+          firstFlower,
+        },
+      ]);
+    }
+    console.log("screenkeep", screenKeep);
+  };
 
   const goToPreviousScene = () => {
     if (screenKeep.length > 1) {
-      screenKeep.pop();
-      setScreenKeep(screenKeep);
-      setCurrentScene(screenKeep[screenKeep.length - 1]);
+      const newScreenKeep = screenKeep.slice(0, -1);
+      setScreenKeep(newScreenKeep);
+      setCurrentScene(newScreenKeep[newScreenKeep.length - 1].scene_id);
+      setName(newScreenKeep[newScreenKeep.length - 1].getName);
+      setIsAlone(newScreenKeep[newScreenKeep.length - 1].isAlone);
+      setSunflower(newScreenKeep[newScreenKeep.length - 1].sunflower);
+      setRoses(newScreenKeep[newScreenKeep.length - 1].roses);
+      setLavender(newScreenKeep[newScreenKeep.length - 1].lavender);
+      setLilly(newScreenKeep[newScreenKeep.length - 1].lilly);
+      setForgetmenot(newScreenKeep[newScreenKeep.length - 1].forgetmenot);
+      setDog(newScreenKeep[newScreenKeep.length - 1].dog);
+      setCat(newScreenKeep[newScreenKeep.length - 1].cat);
+      setSelectedAnimal(newScreenKeep[newScreenKeep.length - 1].selectedAnimal);
+      setFirstFlower(newScreenKeep[newScreenKeep.length - 1].firstFlower);
     }
   };
 
@@ -63,10 +114,10 @@ const Story = () => {
       setForgetmenot(forgetmenot + choice.forgetmenot);
     }
     if (choice.dog != null) {
-      setDog(dog + choice.dog); // function หมา
+      setDog(choice.dog); // function หมา
     }
     if (choice.cat != null) {
-      setCat(cat + choice.cat); // function แมว
+      setCat(choice.cat); // function แมว
     }
     if (choice.selectedAnimal != null) {
       setSelectedAnimal(choice.selectedAnimal);
@@ -80,22 +131,37 @@ const Story = () => {
   useEffect(() => {
     const audio = document.getElementById("audio") as HTMLAudioElement;
     audio.play();
-  }, [currentScene]);
+    if (!currentScene) {
+      localStorage.clear();
+    }
+  }, [currentScene, setCurrentScene]);
 
-  useEffect(() => {
-    // อย่าลืมลบ
-    setCurrentScene(0);
-    setName("");
-    setScreenKeep([0]);
-    setIsAlone(true);
-    setSunflower(0);
-    setRoses(0);
-    setLavender(0);
-    setLilly(0);
-    setForgetmenot(0);
-    setDog(0);
-    setCat(0);
-  }, []);
+  // useEffect(() => {
+  //   // อย่าลืมลบ
+  //   setCurrentScene(0);
+  //   setName("");
+  //   setScreenKeep([0]);
+  //   setIsAlone(true);
+  //   setSunflower(0);
+  //   setRoses(0);
+  //   setLavender(0);
+  //   setLilly(0);
+  //   setForgetmenot(0);
+  //   setDog(0);
+  //   setCat(0);
+  // }, [
+  //   setCat,
+  //   setCurrentScene,
+  //   setDog,
+  //   setForgetmenot,
+  //   setIsAlone,
+  //   setLavender,
+  //   setLilly,
+  //   setName,
+  //   setRoses,
+  //   setScreenKeep,
+  //   setSunflower,
+  // ]);
 
   useEffect(() => {
     // ใส่ชื่อใน story
@@ -110,7 +176,7 @@ const Story = () => {
       story.innerHTML = story.innerHTML.replace("{getName}", getName);
       console.log(story.innerHTML);
     }
-  }, [currentScene]);
+  }, [currentScene, getName]);
   return (
     <>
       {/* audio */}
@@ -161,22 +227,25 @@ const Story = () => {
             )}
 
             {/* back button */}
-            <div
-              className={`absolute z-[999] left-8 top-10 ${
-                currentScene == 0 ? "hidden" : ""
-              }`}
-            >
-              <Icon
-                onClick={goToPreviousScene}
-                icon="ic:baseline-navigate-before"
-                className="bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 rounded-full hover:cursor-pointer text-4xl"
-              />
+            <div className="relative mx-auto max-w-md ">
+              <div
+                className={`absolute z-[999] left-8 top-10 ${
+                  currentScene == 0 ? "hidden" : ""
+                }`}
+              >
+                <Icon
+                  onClick={goToPreviousScene}
+                  icon="ic:baseline-navigate-before"
+                  className="bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 rounded-full hover:cursor-pointer text-4xl"
+                />
+              </div>
             </div>
 
             <div
-              className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto ${
-                isCurrentScene ? "fadeIn" : "fadeOut"
-              }`}
+              // className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto ${
+              //   isCurrentScene ? "fadeIn" : "fadeOut"
+              // }`}
+              className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto`}
               onClick={() => goToScene(item.go!)}
             >
               {/* logo */}
@@ -203,16 +272,18 @@ const Story = () => {
                         <div
                           id={"title" + item.scene_id}
                           dangerouslySetInnerHTML={{ __html: item.title || "" }}
-                          className="text-xl font-extrabold pt-4"
-                          onClick={() => goToScene(item.go!)}
+                          className="text-xl font-extrabold pt-4 animate-fade animate-duration-[2000ms] animate-ease-out"
+                          // onClick={() => goToScene(item.go!)}
                         />
                       )}
                       {item.story && (
                         <div
                           id={"story" + item.scene_id}
                           dangerouslySetInnerHTML={{ __html: item.story || "" }}
-                          className="p-4"
-                          onClick={() => goToScene(item.go!)}
+                          className={`p-4 animate-fade animate-duration-[2000ms] animate-ease-out ${
+                            item.title ? "animate-delay-1000" : ""
+                          } `}
+                          // onClick={() => goToScene(item.go!)}
                         />
                       )}
                     </div>
@@ -222,13 +293,14 @@ const Story = () => {
                           <button
                             key={choiceIndex}
                             onClick={() => checkChoice(choice)}
-                            className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-3 p-4 bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10"
+                            // className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-3 p-4 bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10"
+                            className="flex flex-row items-center justify-center rounded-xl gap-3 p-4 bg-secondary-dark/70  animate-fade animate-duration-[2000ms] animate-delay-1000 animate-ease-out"
                           >
-                            <p className="relative text-[10px] bg-white rounded-full w-6 h-5 text-black text-sm font-thin">
+                            <p className="relative text-[10px] rounded-full w-6 h-5 text-secondary-dark text-sm font-bold bg-primary-white text-center">
                               {choiceIndex + 1}
                             </p>
                             <p
-                              className="text-center w-full"
+                              className="text-center w-full text-md"
                               dangerouslySetInnerHTML={{ __html: choice.title }}
                             />
                           </button>
@@ -238,15 +310,7 @@ const Story = () => {
                 )}
               </div>
               {/* footer */}
-              <div
-                className={`flex flex-col items-center h-auto w-full gap-2 ${
-                  currentScene == 0 ? "hidden" : ""
-                }`}
-              >
-                <small className="text-white">
-                  Copyright 2024 © Technology Club of Kasetsart University
-                </small>
-              </div>
+              <CopyRight currentScene={currentScene} />
             </div>
           </div>
         );

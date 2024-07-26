@@ -15,9 +15,14 @@ const config: Config = {
       },
       colors: {
         "primary-blue": "#C2DBFF",
-      }
+        "primary-white": "#FFF5EA",
+        "secondary-white": "#D0D1C2",
+
+        "primary-dark": "#352F36",
+        "secondary-dark": "#5A535B",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animated")],
 };
 export default config;
