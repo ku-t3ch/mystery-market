@@ -14,6 +14,7 @@ const Story = () => {
   ]);
 
   const [isAlone, setIsAlone] = useLocalStorage<boolean>("isAlone", true);
+  const [firstFlower, setFirstFlower] = useLocalStorage<string>("firstFlower", "");
   const [sunflower, setSunflower] = useLocalStorage<number>("sunflower", 0);
   const [roses, setRoses] = useLocalStorage<number>("roses", 0);
   const [lavender, setLavender] = useLocalStorage<number>("lavender", 0);
@@ -69,6 +70,9 @@ const Story = () => {
     }
     if (choice.selectedAnimal != null) {
       setSelectedAnimal(choice.selectedAnimal);
+    }
+    if (choice.firstFlower != null) {
+      setFirstFlower(choice.firstFlower);
     }
     goToScene(choice.go);
   };

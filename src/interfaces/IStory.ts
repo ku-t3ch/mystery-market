@@ -2,6 +2,7 @@ export interface IChoice {
   title: string;
   go: number // go to scene_id
   isAlone?: boolean
+  firstFlower?: string
   sunflower?: number
   roses?: number
   lavender?: number
