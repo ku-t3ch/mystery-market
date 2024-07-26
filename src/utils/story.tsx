@@ -240,7 +240,7 @@ export const story: IStory[] = [
     story:
       "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องหมาตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208, dog: 1 },
+      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208, dog: true },
       { title: "ไม่เทน้ำให้กิน (ไม่มีน้องหมา)", go: 208 },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
@@ -250,7 +250,7 @@ export const story: IStory[] = [
     story:
       "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องแมวตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208, cat: 1 },
+      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208, cat: true },
       { title: "ไม่เทน้ำให้กิน (ไม่มีน้องแมว)", go: 208 },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
@@ -432,7 +432,7 @@ export const story: IStory[] = [
     title:
       "สภาพของมันไม่ค่อยสู้ดีนัก<br/>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่ <br/> คุณจะ....ทำอย่างไรกับน้องหมาตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน", go: 309, dog: 1 },
+      { title: "เทน้ำให้กิน", go: 309, dog: true },
       { title: "ไม่เทน้ำให้กิน", go: 309 },
     ],
     background: "/mystery-market/assets/background/oceanbackground.png",
@@ -442,7 +442,7 @@ export const story: IStory[] = [
     title:
       "สภาพของมันไม่ค่อยสู้ดีนัก<br/>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่ <br/> คุณจะ....ทำอย่างไรกับน้องแมวตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน", go: 309, cat: 1 },
+      { title: "เทน้ำให้กิน", go: 309, cat: true },
       { title: "ไม่เทน้ำให้กิน", go: 309 },
     ],
     background: "/mystery-market/assets/background/oceanbackground.png",
