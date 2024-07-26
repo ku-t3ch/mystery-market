@@ -25,14 +25,22 @@ export default function PreAloneEnding({}: Props) {
     const has213 = screenKeep.includes(213);
 
     if (has214 && isAlone) {
-      if (message !== "") {
+      if (message !== "") 
+      {
         if (selectedAnimal === "dog" && dog > 0) {
-          return 218;
+          return 222;
+        } else if (selectedAnimal === "cat" && cat > 0) {
+          return 223;
+        } else {
+          return 221;
         }
+      } else {
+        return 220;
       }
     }
     else if (has213 && isAlone) {
-      if (message !== "") {
+      if (message !== "") 
+      {
         if (selectedAnimal === "dog" && dog > 0) {
           return 218;
         }
@@ -43,7 +51,8 @@ export default function PreAloneEnding({}: Props) {
           return 217;
         }
       }
-      else {
+      else 
+      {
         return 216;
       }
     }

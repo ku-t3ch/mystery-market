@@ -8,6 +8,7 @@ import MarketTextField from "@/components/storys/209";
 import PreEnding from "@/components/storys/314";
 import PreAloneEnding from "@/components/storys/215";
 import EndingNote from "@/components/storys/225";
+import Garden from "@/components/storys/17";
 
 // ในกรณีที่ต้องที่ choice มีการเช็คเงื่อนไข ให้ทำการสร้าง component ใส่ children
 // tip: กรณีท่่ี่พื้นหลังเป็น .mp4 ให้ทำการ hardcode ที่ page หลักเลย ตามตัวอย่างที่ทำไว้ (หรือมีวิธีที่ดีกว่าก็ฝากทำด้วยขอบใจ)
@@ -43,10 +44,30 @@ export const story: IStory[] = [
     title: "เมื่อคุณกลับถึงบ้านแล้ว<br/>ห้องของคุณเป็นอย่างไร",
     story: null,
     choice: [
-      { title: "ห้องโมเดิร์น สไตล์ชิคๆ", go: 5, sunflower: 1 },
-      { title: "ห้องมินิมอล สไตล์น่ารัก", go: 5, roses: 1 },
-      { title: "ห้องที่ไม่เป็นระเบียบ ของเต็มห้อง", go: 5, lavender: 1 },
-      { title: "ห้องที่จัดระเบียบแบ่งเป็นหมวดหมู่", go: 5, lilly: 1 },
+      {
+        title: "ห้องโมเดิร์น สไตล์ชิคๆ",
+        go: 5,
+        sunflower: 1,
+        firstFlower: "sunflower",
+      },
+      {
+        title: "ห้องมินิมอล สไตล์น่ารัก",
+        go: 5,
+        roses: 1,
+        firstFlower: "roses",
+      },
+      {
+        title: "ห้องที่ไม่เป็นระเบียบ ของเต็มห้อง",
+        go: 5,
+        lavender: 1,
+        firstFlower: "lavender",
+      },
+      {
+        title: "ห้องที่จัดระเบียบแบ่งเป็นหมวดหมู่",
+        go: 5,
+        lilly: 1,
+        firstFlower: "lilly",
+      },
       { title: "ห้องที่บรรยากาศเงียบสงบ", go: 5, forgetmenot: 1 },
     ],
   },
@@ -162,6 +183,11 @@ export const story: IStory[] = [
     background: "/mystery-market/assets/background/roombgdark.jpg",
   },
   {
+    scene_id: 17,
+    children: <Garden />,
+    background: "/mystery-market/assets/background/roombglight-resize.webp",
+  },
+  {
     scene_id: 201,
     story: "Question : เธอจะไม่เข้าไปดูจริงๆเหรอ?",
     choice: [
@@ -263,7 +289,6 @@ export const story: IStory[] = [
   },
   {
     scene_id: 212,
-    story: "",
     choice: [
       {
         title:
@@ -322,16 +347,36 @@ export const story: IStory[] = [
     go: 225,
   },
   {
+    scene_id: 220,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />ไร้เสียงของสิ่งมีชีวิตใดๆ<br />แสงรำไรส่องกระทบผ่านเปียโนตัวโปรด<br />คุณดื่มด่ำไปกับภาพตรงหน้าและคิดว่าจะทำอย่างไรต่อดี",
+    go: 224,
+  },
+  {
+    scene_id: 221,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />ไร้เสียงของสิ่งมีชีวิตใดๆ<br />แสงรำไรส่องแสงกระทบผ่านเปียโนตัวโปรด<br />คุณดื่มด่ำไปกับภาพตรงหน้าและคิดว่าจะทำอย่างไรต่อดี",
+    go: 225,
+  },
+  {
+    scene_id: 222,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />แต่ทันใดนั้นมีเสียงบ๊อกๆอยู่บนตัวของคุณ<br />เจ้าโฮ่งตัวจิ๋วจ้องมองตาแป๋ว แล้วกระดิกหางอย่างร่าเริง<br />ในที่สุดชีวิตอันแสนสงบก็เริ่มมีชีวิตชีวามากกว่าเดิม",
+    go: 225,
+  },
+  {
+    scene_id: 223,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />แต่ทันใดนั้นมีเสียงเมี๊ยวอยู่บนตัวของคุณ<br />เจ้าเหมียวตัวจิ๋วจ้องมองตาแป๋ว แล้วส่ายหางไปมา<br />ในที่สุดชีวิตอันแสนสงบก็เริ่มมีชีวิตชีวามากกว่าเดิม",
+    go: 225,
+  },
+  {
     scene_id: 224,
     story: "คุณลุกขึ้นมาและพบแค่ดอกไม้ 1 ดอกที่วางไว้อยู่บนโต๊ะ",
   },
   {
     scene_id: 225,
     children: <EndingNote />,
-  },
-  {
-    scene_id: 226,
-    title: "แปลงดอกไม้",
   },
   {
     scene_id: 301,

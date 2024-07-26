@@ -12,7 +12,7 @@ export default function EndingNote({}: Props) {
   );
 
   const onNextSceneButton = () => {
-    const nextScene = 226;
+    const nextScene = 17;
     if (message) {
       setCurrentScene(nextScene);
       setScreenKeep([...screenKeep, nextScene]);
@@ -32,7 +32,10 @@ export default function EndingNote({}: Props) {
         </div>
       </div>
       <div className="mt-2">
-        <button onClick={() => onNextSceneButton()}>
+        <button
+          onClick={() => onNextSceneButton()}
+          className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-2 py-2 px-8 bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 border"
+        >
           คุณก็หยิบดอกไม้ที่วางไว้บนโต๊ะขึ้นมา
         </button>
       </div>
