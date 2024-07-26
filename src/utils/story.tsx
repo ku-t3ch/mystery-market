@@ -373,6 +373,7 @@ export const story: IStory[] = [
   {
     scene_id: 224,
     story: "คุณลุกขึ้นมาและพบแค่ดอกไม้ 1 ดอกที่วางไว้อยู่บนโต๊ะ",
+    go: 17,
   },
   {
     scene_id: 225,
