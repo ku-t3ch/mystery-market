@@ -197,9 +197,25 @@ const Story = () => {
           className="absolute object-cover max-w-md w-full h-[calc(100dvh)] right-0 left-0 m-auto"
           poster="/mystery-market/assets/background/rainbackground-resize.webp"
           playsInline
+          preload="auto"
         >
           <source
             src="/mystery-market/assets/background/rainbackground.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      )}
+      {currentScene == 15.1 && (
+        <video /* hardcode พื้นหลัง video rainbackground.mp4 */
+          autoPlay
+          muted
+          className="absolute object-cover max-w-md w-full h-[calc(100dvh)] right-0 left-0 m-auto"
+          poster="/mystery-market/assets/background/boatvod1_000.webp"
+          playsInline
+        >
+          <source
+            src="/mystery-market/assets/background/boatvod1.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -294,7 +310,10 @@ const Story = () => {
                             key={choiceIndex}
                             onClick={() => checkChoice(choice)}
                             // className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-3 p-4 bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10"
-                            className="flex flex-row items-center justify-center rounded-xl gap-3 p-4 bg-secondary-dark/70  animate-fade animate-duration-[2000ms] animate-delay-1000 animate-ease-out"
+                            className="flex flex-row items-center justify-center rounded-xl gap-4 p-4 bg-primary-dark/30  animate-fade-up animate-duration-[1500ms]  animate-ease-out"
+                            style={{
+                              animationDelay: `${500 + choiceIndex * 300}ms`,
+                            }}
                           >
                             <p className="relative text-[10px] rounded-full w-6 h-5 text-secondary-dark text-sm font-bold bg-primary-white text-center">
                               {choiceIndex + 1}

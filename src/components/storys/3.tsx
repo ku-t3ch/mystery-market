@@ -14,9 +14,9 @@ export default function UserEnterName() {
 
   const onNextSceneButton = () => {
     if (currentName) {
-      const lastScreenKeep = screenKeep[screenKeep.length - 1];
       setName(currentName);
       setCurrentScene(3);
+      const lastScreenKeep = screenKeep[screenKeep.length - 1];
       setScreenKeep([
         ...screenKeep,
         {
@@ -25,7 +25,6 @@ export default function UserEnterName() {
           getName: currentName,
         },
       ]);
-      console.log("here", screenKeep);
     }
   };
 
@@ -48,7 +47,7 @@ export default function UserEnterName() {
         />
         <button
           onClick={onNextSceneButton}
-          className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-2 py-2 px-8 bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 border"
+          className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-2 py-2 px-8 bg-[##D9D9D91A] shadow-sm shadow-black/10 border"
         >
           <span>ถัดไป</span>
           <Icon
