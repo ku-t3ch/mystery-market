@@ -141,7 +141,7 @@ export const story: IStory[] = [
   },
   {
     scene_id: 10,
-    title: `"แก ไปเที่ยวตลาดน้ำราตรี<br/>เป็นเพื่อนเราหน่อยสิ"`,
+    title: `"{getName}ไปตลาดน้ำ<br/>เป็นเพื่อนเราหน่อยสิ"`,
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
     go: 10.1,
   },
