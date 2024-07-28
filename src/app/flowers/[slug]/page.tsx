@@ -5,7 +5,6 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useLocalStorage } from "usehooks-ts";
 
 type TitleKeys = "lily" | "sunflower" | "lavender" | "rose" | "forgetmenot";
 
@@ -41,7 +40,7 @@ const Title: Record<TitleKeys, TitleInfo> = {
   rose: {
     name: "rose",
     title: "Rose",
-    subtitle: "ยอมรับเธอได้ทุกอย่าง",
+    subtitle: "ฉันยอมรับเธอได้ทุกอย่าง",
     description:
       "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกกุหลาบ ในยามสาย คุณมักจะเป็นคนที่เข้าใจและพร้อมสนับสนุนทุกคนเสมอ ความสวยงามอันมีเสน่ห์และความอ่อนน้อมถ่อมตน อันไร้ที่ติคือเสน่ห์ของคุณ",
   },
@@ -169,10 +168,9 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
   );
 }
 
-export function Credit() {
+function Credit() {
   return (
     <>
-      {/* <div className=" text-3xl font-bold">Credit </div> */}
       <div className="text-center text-4xl font-bold">Credit </div>
       <div className="pt-1 flex flex-col items-center gap-1">
         <div className="text-sm">Developed By</div>
@@ -224,11 +222,11 @@ export function Credit() {
   );
 }
 
-export function TopLogo() {
+function TopLogo() {
   return <></>;
 }
 
-export function SocialMedia() {
+function SocialMedia() {
   return (
     <>
       <div className="flex flex-col items-center gap-1  text-xs text-secondary-dark ">
