@@ -1,14 +1,16 @@
 export interface IChoice {
   title: string;
-  go: number // go to scene_id
-  isAlone?: boolean
-  sunflower?: number
-  roses?: number
-  lavender?: number
-  lilly?: number
-  forgetmenot?: number
-  dog? : number
-  cat? : number
+  go: number; // go to scene_id
+  isAlone?: boolean;
+  firstFlower?: string;
+  sunflower?: number;
+  roses?: number;
+  lavender?: number;
+  lilly?: number;
+  forgetmenot?: number;
+  selectedAnimal?: string;
+  dog?: boolean;
+  cat?: boolean;
 }
 
 export interface IStory {
@@ -19,6 +21,21 @@ export interface IStory {
   poster?: string;
   background?: string;
   go?: number | null; // go to scene_id
-  children?: React.ReactNode
-  backToIndex?: number | null
+  children?: React.ReactNode;
+  backToIndex?: number | null;
+}
+
+export interface IStateKeep {
+  scene_id: number;
+  getName: string;
+  isAlone: boolean;
+  sunflower: number;
+  roses: number;
+  lavender: number;
+  lilly: number;
+  forgetmenot: number;
+  dog: boolean;
+  cat: boolean;
+  selectedAnimal: string;
+  firstFlower: string;
 }

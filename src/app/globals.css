@@ -30,3 +30,15 @@
   }
 }
 
+.choice-story {
+  @apply animate-fade animate-duration-[1500ms]
+}
+
+.choice-number {
+  @apply relative text-[10px] rounded-full w-6 h-5 text-secondary-dark text-sm font-bold bg-primary-white text-center;
+}
+
+.choice-button {
+  @apply flex flex-row items-center justify-center rounded-xl gap-4 p-4 bg-primary-dark/30  animate-fade-up animate-duration-[1500ms]  animate-ease-out;
+}
+

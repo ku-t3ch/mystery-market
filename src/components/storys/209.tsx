@@ -9,12 +9,12 @@ export default function MarketTextField() {
     "screenKeep",
     []
   );
-
-  // TODO: Save message, loading UI
+  const [messageStore, setMessageStorage] = useLocalStorage<string>("message", "");
 
   const onNextSceneButton = () => {
     const nextScene = 204;
     if (message) {
+      setMessageStorage(message);
       setCurrentScene(nextScene);
       setScreenKeep([...screenKeep, nextScene]);
     }
@@ -43,7 +43,7 @@ export default function MarketTextField() {
           onChange={(e) => setMessage(e.target.value)}
           cols={40}
           rows={10}
-          className="bg-gray-400 bg-opacity-40 rounded-xl text-center shadow-sm shadow-black/15 py-2 px-4 focus:outline-none focus:border-white placeholder:text-slate-200"
+          className="bg-gray-400 bg-opacity-40 rounded-xl shadow-sm shadow-black/15 py-2 px-4 focus:outline-none focus:border-white placeholder:text-slate-200"
           placeholder="กรุุณาเขียนข้อความต้องการให้กำลังใจเด็กน้อยคนนั้น"
         ></textarea>
         <button

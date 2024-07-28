@@ -6,6 +6,10 @@ import Market01 from "../components/storys/15";
 import Market02 from "../components/storys/16";
 import MarketTextField from "@/components/storys/209";
 import PreEnding from "@/components/storys/314";
+import PreAloneEnding from "@/components/storys/215";
+import EndingNote from "@/components/storys/225";
+import Garden from "@/components/storys/17";
+import Ocean from "@/components/storys/Ocean";
 
 // ในกรณีที่ต้องที่ choice มีการเช็คเงื่อนไข ให้ทำการสร้าง component ใส่ children
 // tip: กรณีท่่ี่พื้นหลังเป็น .mp4 ให้ทำการ hardcode ที่ page หลักเลย ตามตัวอย่างที่ทำไว้ (หรือมีวิธีที่ดีกว่าก็ฝากทำด้วยขอบใจ)
@@ -41,10 +45,30 @@ export const story: IStory[] = [
     title: "เมื่อคุณกลับถึงบ้านแล้ว<br/>ห้องของคุณเป็นอย่างไร",
     story: null,
     choice: [
-      { title: "ห้องโมเดิร์น สไตล์ชิคๆ", go: 5, sunflower: 1 },
-      { title: "ห้องมินิมอล สไตล์น่ารัก", go: 5, roses: 1 },
-      { title: "ห้องที่ไม่เป็นระเบียบ ของเต็มห้อง", go: 5, lavender: 1 },
-      { title: "ห้องที่จัดระเบียบแบ่งเป็นหมวดหมู่", go: 5, lilly: 1 },
+      {
+        title: "ห้องโมเดิร์น สไตล์ชิคๆ",
+        go: 5,
+        sunflower: 1,
+        firstFlower: "sunflower",
+      },
+      {
+        title: "ห้องมินิมอล สไตล์น่ารัก",
+        go: 5,
+        roses: 1,
+        firstFlower: "roses",
+      },
+      {
+        title: "ห้องที่ไม่เป็นระเบียบ ของเต็มห้อง",
+        go: 5,
+        lavender: 1,
+        firstFlower: "lavender",
+      },
+      {
+        title: "ห้องที่จัดระเบียบแบ่งเป็นหมวดหมู่",
+        go: 5,
+        lilly: 1,
+        firstFlower: "lilly",
+      },
       { title: "ห้องที่บรรยากาศเงียบสงบ", go: 5, forgetmenot: 1 },
     ],
   },
@@ -53,7 +77,7 @@ export const story: IStory[] = [
     title: "เมื่อคุณเข้ามาในห้องแล้ว<br/>สิ่งแรกที่คุณจะทำคือ",
     choice: [
       { title: "เล่นเกมออนไลน์กับเพื่อน วันนี้ต้องชนะ!", go: 7 },
-      { title: "นั่งเล่นโทรศัพท์คนเดียว ที่โซฟาตัวโปรด", go: 6 },
+      { title: "นั่งเล่นโทรศัพท์ที่โซฟาตัวโปรด", go: 6 },
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
@@ -65,36 +89,79 @@ export const story: IStory[] = [
   },
   {
     scene_id: 7,
-    story: "ขณะที่คุณเล่นเกมบนคอมพิวเตอร์<br/>จู่ๆก็มีข้อความเด้งขึ้นมา",
+    story: "ขณะที่คุณเล่นเกมอยู่<br/>จู่ๆก็มีข้อความเด้งขึ้นมา",
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
-    go: 8,
+    go: 8.1,
   },
   {
-    scene_id: 8,
-    story: "เพื่อนของคุณทักคุณมา<br/>เฮ้...{getName} ไปเที่ยวตลาดน้ำกัน",
+    scene_id: 8.1,
+    title: `อ่านข้อความเลยมั้ย`,
     choice: [
-      { title: "ตอบข้อความ", go: 10 },
-      { title: "ไม่ตอบข้อความ", go: 9 }, // bad ending
+      { title: "อ่านข้อความ", go: 10 },
+      { title: "ค่อยอ่านอีกที", go: 8.2 }, // bad ending
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
   {
+    scene_id: 8.2,
+    story: `เวลาผ่านไปช่วงนึง คุณจึงเปิดมือถืออีกครั้ง`,
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
+    go: 8.3,
+  },
+  {
+    scene_id: 8.3,
+    title: `อ่านข้อความเลยมั้ย`,
+    choice: [
+      { title: "อ่านข้อความ", go: 10 },
+      { title: "ค่อยอ่านอีกที", go: 8.4 }, // bad ending
+    ],
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
+  },
+  {
+    scene_id: 8.4,
+    title: `จะไม่อ่านจริง ๆ หรอ`,
+    choice: [
+      { title: "อ่านข้อความ", go: 10 },
+      { title: "ไม่อ่าน", go: 8.5 }, // bad ending
+    ],
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
+  },
+  {
+    scene_id: 8.5,
+    title: `. . .`,
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
+    go: 9,
+  },
+  {
     scene_id: 9, // ending
+    title: "Bad Ending",
     story:
       "ถึงเธอที่รัก ช่างน่าเสียตายจริงๆ<br/>การเดินทางของคุณต้องจบลง<br/>โดยที่ไม่ได้รู้ความลับอะไรเลย<br/>ไม่เป็นไรนะ ยังมีเส้นทางอื่นๆมากมายรอคุณอยุ่<br/>ถ้าเธออยากรู้ผลลัพธ์อื่นๆละก็... ลองเล่นอีกครั่งดูสิ!",
     go: 0, // reset to start
   },
   {
     scene_id: 10,
-    title: "ตอบข้อความไปว่า...",
+    title: `"{getName}ไปตลาดน้ำ<br/>เป็นเพื่อนเราหน่อยสิ"`,
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
+    go: 10.1,
+  },
+  {
+    scene_id: 10.1,
+    story: `คุณเคยได้ยินชื่อตลาดน้ำนี้มาผ่าน ๆ<br/>และคุณเองก็เคยอยากที่จะไปสักครั้ง`,
+    background: "/mystery-market/assets/background/roombgdark-resize.webp",
+    go: 10.3,
+  },
+  {
+    scene_id: 10.3,
+    title: `คุณตอบข้อความเพื่อนของคุณไปว่า`,
     choice: [
       {
-        title: "ไปสิ!<br/>แน่นอนเรื่องอะไรที่ฉันจะพลาด",
+        title: "ได้ ๆ ไปกัน",
         go: 13,
         isAlone: false,
       }, // extrovert
       {
-        title: "ไว้วันหลังนะ<br/>ช่วงนี้งานเยอะมากเลยTT",
+        title: "ไว้วันหลังนะ",
         go: 11,
         isAlone: true,
       }, // introvert
@@ -106,7 +173,7 @@ export const story: IStory[] = [
     story:
       "หลังจากที่คุณปฎิเสธไปแล้ว<br/>คุณก็ได้ลองค้นหาข้อมูลตลาดน้ำแห่งนี้<br/>พบว่ามีของที่น่าสนใจอยู่ สิ่งนั้นคือ",
     choice: [
-      { title: "บอร์ดเกมใหม่ล่าสุด รุ่น limited editon", go: 12, sunflower: 1 },
+      { title: "บอร์ดเกมใหม่ที่คุณสนใจ", go: 12, sunflower: 1 },
       { title: "อุปกรณ์วาดรูปสำหรับเด็ก", go: 12, roses: 1 },
       {
         title: "หนังสือมือสองเกี่ยวกับวัฒนธรรม ท่องเที่ยว",
@@ -121,16 +188,16 @@ export const story: IStory[] = [
   {
     scene_id: 12,
     story:
-      "หลังจากที่เห็นของที่น่าสนใจแล้ว<br/>คุณจึงตัดสินใจที่จะไปเยี่ยมชมตลาดน้ำแห่งนี้<br/>แล้วเดินทางไปตลาดนำ้คนเดียว",
+      "หลังจากที่เห็นของที่น่าสนใจแล้ว<br/>คุณจึงตัดสินใจที่จะไปเยี่ยมชมตลาดน้ำแห่งนี้<br/>แล้วเดินทางไปตลาดน้ำด้วยตัวเอง",
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
-    go: 15,
+    go: 15.1,
   },
   {
     scene_id: 13,
     story:
       "หลังจากที่คุณตกลงไปกับเพื่อนของคุณแล้ว<br/>คุณก็ได้ลองค้นหาข้อมูลตลาดนำ้แห่งนี้<br/>และพบว่ามีของที่น่าสนใจอยู่ สิ่งนั้นคือ",
     choice: [
-      { title: "บอร์ดเกมใหม่ล่าสุด รุ่น limited editon", go: 14, sunflower: 1 },
+      { title: "บอร์ดเกมใหม่ที่คุณสนใจ", go: 14, sunflower: 1 },
       { title: "อุปกรณ์วาดรูปสำหรับเด็ก", go: 14, roses: 1 },
       {
         title: "หนังสือมือสองเกี่ยวกับวัฒนธรรม ท่องเที่ยว",
@@ -147,17 +214,27 @@ export const story: IStory[] = [
     story:
       "หลังจากที่เห็นของที่น่าสนใจแล้ว<br/>คุณจึงตัดสินใจนัดเวลาและจุดนัดพบ<br/>แล้วเดินทางไปตลาดน้ำกับเพื่อนคุณ",
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
+    go: 15.1,
+  },
+  {
+    scene_id: 15.1,
+    children: <Ocean />,
     go: 15,
   },
   {
     scene_id: 15,
     children: <Market01 />,
-    background: "/mystery-market/assets/background/roombgdark-resize.webp",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 16,
     children: <Market02 />,
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+  },
+  {
+    scene_id: 17,
+    children: <Garden />,
+    background: "/mystery-market/assets/background/roombglight-resize.webp",
   },
   {
     scene_id: 201,
@@ -188,15 +265,15 @@ export const story: IStory[] = [
     scene_id: 203,
     story: "สัตว์ตัวนั้นคือ...",
     choice: [
-      { title: "น้องหมา", go: 206 },
-      { title: "น้องแมว", go: 207 },
+      { title: "น้องหมา", go: 206, selectedAnimal: "dog" },
+      { title: "น้องแมว", go: 207, selectedAnimal: "cat" },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
   },
   {
     scene_id: 204,
     story:
-      "หลังจากเหตุการณ์ทุกอย่างจบลง ..........<br />ถึงแม้ว่ามันจะดึกแล้ว<br />แต่คุณยังรู้สึกไม่อยากกลับบ้าน<br />จึงไปนั่งเรือพายชมแสงจันทร์<br />" +
+      "หลังจากเหตุการณ์ทุกอย่างจบลง<br />ถึงแม้ว่ามันจะดึกแล้ว<br />แต่คุณยังรู้สึกไม่อยากกลับบ้าน<br />จึงไปนั่งเรือพายชมแสงจันทร์<br />" +
       "ซึ่งเป็นไฮไลท์ของตลาดน้ำราตรีแห่งนี้อีกครั้ง",
     background: "/mystery-market/assets/background/roombgdark.jpg",
     go: 210,
@@ -212,7 +289,7 @@ export const story: IStory[] = [
     story:
       "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องหมาตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208, dog: 1 },
+      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208, dog: true },
       { title: "ไม่เทน้ำให้กิน (ไม่มีน้องหมา)", go: 208 },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
@@ -222,7 +299,7 @@ export const story: IStory[] = [
     story:
       "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องแมวตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208, cat: 1 },
+      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208, cat: true },
       { title: "ไม่เทน้ำให้กิน (ไม่มีน้องแมว)", go: 208 },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
@@ -243,6 +320,18 @@ export const story: IStory[] = [
     story:
       "แต่ทว่าคุณกลับรู้สึกง่วงนอนแปลกๆ<br /> ความรู้สึกสุดท้ายที่คุณจำได้คือหนังตาที่เริ่มหย่อนลง <br />ความรู้สึกที่เหมือนตกจากเรือ<br />จมลงสู่แม่น้ำในห้วงลึกด่ำดึ่งลงไป…",
     background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 210.1,
+  },
+  {
+    scene_id: 210.1,
+    title: "จมลงสู่แม่น้ำในห้วงลึกด่ำดึ่งลงไป…",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 210.2,
+  },
+  {
+    scene_id: 210.2,
+    title: ". . .",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
     go: 211,
   },
   {
@@ -254,14 +343,18 @@ export const story: IStory[] = [
       "พรนี้เป็นพรขอบคุณ<br />" +
       "สำหรับการเดินทางตลาดราตรีแสงจันทร์ในคืนนี้<br />" +
       "เมื่อคุณเลือกไปแล้ว<br />" +
-      "คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br />" +
-      "เพราะฉะนั้น โปรดเลือกในสิ่งที่คุณปรารถนามากที่สุด",
+      "คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br />",
+    background: "/mystery-market/assets/background/roombgdark.jpg",
+    go: 211.1,
+  },
+  {
+    scene_id: 211.1,
+    title: " โปรดเลือกในสิ่งที่คุณปรารถนามากที่สุด",
     background: "/mystery-market/assets/background/roombgdark.jpg",
     go: 212,
   },
   {
     scene_id: 212,
-    story: "",
     choice: [
       {
         title:
@@ -271,10 +364,86 @@ export const story: IStory[] = [
       {
         title:
           "ขออยู่ในโลกแห่งความเป็นจริงโดย<br />มีชีวิตที่มั่นคงและได้ทุกอย่างในสิ่งที่มุ่งหวั่ง",
-        go: 314,
+        go: 214,
       },
     ],
     background: "/mystery-market/assets/background/roombgdark.jpg",
+  },
+  {
+    scene_id: 213,
+    story:
+      "แสงยามเช้าอันสดใส<br />เสียงนกที่คอยร้องเพลงในตอนเช้าตรู่<br />จนทำให้คุณเริ่มรู้สึกตัว<br />เมื่อลืมตาตื่นขึ้นมาคุณก็" +
+      "ได้ยินเสียงนาฬิกาปลุก<br />ที่ดังตามเวลาที่เคยเป็นเฉกเช่นกิจวัตรประจำวัน",
+    go: 215,
+  },
+  {
+    scene_id: 214,
+    story:
+      "แสงยามเช้าอันสดใส <br />เสียงนกที่คอยร้องเพลงในตอนเช้าตรู่<br />ทำให้คุณรู้สึกตัวและลืมตาตื่นขึ้นมา<br />" +
+      "คุณก็ได้ยินเสียงนาฬิกาปลุกที่ดังตามเวลาเช่นเคย<br />หลังจากที่ปิดนาฬิกาปลุกแล้ว<br />คุณสำรวจกับตัวเอง<br />แล้วพบว่า….",
+    go: 215,
+  },
+  {
+    scene_id: 215,
+    children: <PreAloneEnding />,
+  },
+  {
+    scene_id: 216,
+    story:
+      "คุณตื่นมาในร่างเด็กตัวเล็กคนหนึ่ง<br />อยู่ในห้องนอนเพียงลำพัง<br />ไร้เสียงของสิ่งมีชีวิตใดๆ<br />แสงรำไรส่องกระทบผ่านเปียโนตัวโปรด<br />" +
+      "คุณดื่มด่ำไปกับภาพตรงหน้าและคิดว่าจะทำอย่างไรต่อดี",
+    go: 224,
+  },
+  {
+    scene_id: 217,
+    story:
+      "คุณตื่นมาในร่างกายเด็กตัวเล็กคนหนึ่ง<br />อยู่ในห้องนอนเพียงลำพัง<br />ไร้เสียงของสิ่งมีชีวิตใดๆ<br />แสงรำไรส่องกระทบผ่านเปียโนตัวโปรด<br />คุณดื่มด่ำไปกับภาพตรงหน้าและคิดว่าจะทำอย่างไรต่อดี",
+    go: 225,
+  },
+  {
+    scene_id: 218,
+    story:
+      "คุณตื่นมาในร่างกายเด็กตัวเล็กคนหนึ่ง<br />อยู่ในห้องนอนเพียงลำพัง<br />แต่ทันใดนั้นมีเสียงบ๊อกๆอยู่บนตัวของคุณ<br />เจ้าโฮ่งตัวจิ๋วจ้องมองตาแป๋ว<br />ในที่สุดชีวิตอันแสนสงบก็เริ่มมีชีวิตชีวามากกว่าเดิม",
+    go: 225,
+  },
+  {
+    scene_id: 219,
+    story:
+      "คุณตื่นมาในร่างกายเด็กตัวเล็กคนนึ่ง<br />อยู่ในห้องนอนเพียงลำพัง<br />แต่ทันใดนั้นมีเสียงเมี๊ยวอยู่บนตัวของคุณ<br />เจ้าเหมียวตัวจิ๋วจ้องมองตาแป๋ว<br />ในที่สุดชีวิตอันแสนสงบก็เริ่มมีชีวิตชีวามากกว่าเดิม",
+    go: 225,
+  },
+  {
+    scene_id: 220,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />ไร้เสียงของสิ่งมีชีวิตใดๆ<br />แสงรำไรส่องกระทบผ่านเปียโนตัวโปรด<br />คุณดื่มด่ำไปกับภาพตรงหน้าและคิดว่าจะทำอย่างไรต่อดี",
+    go: 224,
+  },
+  {
+    scene_id: 221,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />ไร้เสียงของสิ่งมีชีวิตใดๆ<br />แสงรำไรส่องแสงกระทบผ่านเปียโนตัวโปรด<br />คุณดื่มด่ำไปกับภาพตรงหน้าและคิดว่าจะทำอย่างไรต่อดี",
+    go: 225,
+  },
+  {
+    scene_id: 222,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />แต่ทันใดนั้นมีเสียงบ๊อกๆอยู่บนตัวของคุณ<br />เจ้าโฮ่งตัวจิ๋วจ้องมองตาแป๋ว แล้วกระดิกหางอย่างร่าเริง<br />ในที่สุดชีวิตอันแสนสงบก็เริ่มมีชีวิตชีวามากกว่าเดิม",
+    go: 225,
+  },
+  {
+    scene_id: 223,
+    story:
+      "คุณตื่นมาในร่างผู้ใหญ่เหมือนเดิม<br />อยู่ในห้องนอนเพียงลำพัง<br />แต่ทันใดนั้นมีเสียงเมี๊ยวอยู่บนตัวของคุณ<br />เจ้าเหมียวตัวจิ๋วจ้องมองตาแป๋ว แล้วส่ายหางไปมา<br />ในที่สุดชีวิตอันแสนสงบก็เริ่มมีชีวิตชีวามากกว่าเดิม",
+    go: 225,
+  },
+  {
+    scene_id: 224,
+    story: "คุณลุกขึ้นมาและพบแค่ดอกไม้ 1 ดอกที่วางไว้อยู่บนโต๊ะ",
+    go: 17,
+  },
+  {
+    scene_id: 225,
+    children: <EndingNote />,
   },
   {
     scene_id: 301,
@@ -329,7 +498,7 @@ export const story: IStory[] = [
     title:
       "สภาพของมันไม่ค่อยสู้ดีนัก<br/>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่ <br/> คุณจะ....ทำอย่างไรกับน้องหมาตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน", go: 309, dog: 1 },
+      { title: "เทน้ำให้กิน", go: 309, dog: true },
       { title: "ไม่เทน้ำให้กิน", go: 309 },
     ],
     background: "/mystery-market/assets/background/oceanbackground.png",
@@ -339,7 +508,7 @@ export const story: IStory[] = [
     title:
       "สภาพของมันไม่ค่อยสู้ดีนัก<br/>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่ <br/> คุณจะ....ทำอย่างไรกับน้องแมวตัวนี้ดี",
     choice: [
-      { title: "เทน้ำให้กิน", go: 309, cat: 1 },
+      { title: "เทน้ำให้กิน", go: 309, cat: true },
       { title: "ไม่เทน้ำให้กิน", go: 309 },
     ],
     background: "/mystery-market/assets/background/oceanbackground.png",
@@ -381,9 +550,8 @@ export const story: IStory[] = [
   },
   {
     scene_id: 314,
-    children: <PreEnding />,
-    // story:
-    //   "แสงยามเช้าอันสดใส<br/>เสียงนกที่คอยร้องเพลงในตอนเช้าตรู่<br/>ทำให้คุณรู้สึกตัวและลืมตาตื่นขึ้นมา<br/>คุณก็ได้ยินเสียงนาฬิกาปลุกที่ดังตามเวลาเช่นเคย<br/><br/>หลังจากที่ปิดนาฬิกาปลุกแล้ว<br/>คุณสำรวจกับตัวเอง<br/>แล้วพบว่า…",
+    story:
+      "แสงยามเช้าอันสดใส<br/>เสียงนกที่คอยร้องเพลงในตอนเช้าตรู่<br/>ทำให้คุณรู้สึกตัวและลืมตาตื่นขึ้นมา<br/>คุณก็ได้ยินเสียงนาฬิกาปลุกที่ดังตามเวลาเช่นเคย<br/><br/>หลังจากที่ปิดนาฬิกาปลุกแล้ว<br/>คุณสำรวจกับตัวเอง<br/>แล้วพบว่า…",
     // background:, //เปลี่ยนฉากทะเลเป็นฉากสดใส
     // go: ไปหน้า Ending
     // ใส่เพลง
