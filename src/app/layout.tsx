@@ -8,7 +8,8 @@ const ibm = IBM_Plex_Sans_Thai({ weight: ["400", "700"], subsets: ["thai"] });
 export const metadata: Metadata = {
   title: "MYSTERY MARKET",
   description: "ค้นหาดอกไม้ของคุณในตลาดน้ำราตรีแห่งแสงจันทร์",
-  manifest: "/mystery-market/site.webmanifest",
+  metadataBase: new URL("https://mystery-market.netlify.app/mystery-market"),
+  // manifest: "/mystery-market/site.webmanifest",
 };
 
 export default function RootLayout({
