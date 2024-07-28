@@ -2,15 +2,17 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 
 type TitleKeys = "lily" | "sunflower" | "lavender" | "rose" | "forgetmenot";
 
 interface TitleInfo {
   name: string;
   title: string;
+  subtitle: string;
   description: string;
 }
 
@@ -18,16 +20,37 @@ const Title: Record<TitleKeys, TitleInfo> = {
   lily: {
     name: "lily",
     title: "Lily",
+    subtitle: "เธอคือความสุขของฉัน",
     description:
       "ถึงเธอที่รัก เธอช่างเหมือนดั่งลิลลี่ในยามบ่ายคุณมักช่างสงสัยใคร่รู้เและเปิดกว้างกับเรื่องใหม่ๆตลอดการเผชิญความท้าทายใหม่ๆและมีความคิดสร้างสรรค์อันยอดเยี่ยมคือเสน่ห์ของคุณ",
   },
-  sunflower: { name: "sunflower", title: "Sunflower", description: "hello" },
-  lavender: { name: "labender", title: "Lavender", description: "hello" },
-  rose: { name: "rose", title: "Rose", description: "hello" },
+  sunflower: {
+    name: "sunflower",
+    title: "Sunflower",
+    subtitle: "รักเพียงเธอผู้เดียว",
+    description:
+      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกทานตะวัน ในยามเช้าตรู่ คุณมักจะเป็นความสดใสและเข้ากับผู้อื่นได้ง่าย ความตื่นเต้นสนุกสนานและการมองโลกในแง่ดี อันไร้ขีดจำกัดคือเสน่ห์ของคุณ",
+  },
+  lavender: {
+    name: "lavender",
+    title: "Lavender",
+    subtitle: "ใส่ใจเธออยู่ตลอด",
+    description:
+      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกลาเวนเดอร์ ในยามเย็น คุณมักจะชอบใส่ใจรายละเอียดและความรับผิดชอบต่องานที่ทำสูง ความพิถีพิถันปราณีตและการควบคุมอารมณ์ที่เป็นเลิศคือเสน่ห์ของคุณ",
+  },
+  rose: {
+    name: "rose",
+    title: "Rose",
+    subtitle: "ยอมรับเธอได้ทุกอย่าง",
+    description:
+      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกกุหลาบ ในยามสาย คุณมักจะเป็นคนที่เข้าใจและพร้อมสนับสนุนทุกคนเสมอ ความสวยงามอันมีเสน่ห์และความอ่อนน้อมถ่อมตน อันไร้ที่ติคือเสน่ห์ของคุณ",
+  },
   forgetmenot: {
     name: "forgetmenot",
     title: "Forget Me Not",
-    description: "hello",
+    subtitle: "สัญลักษณ์ของรักแท้",
+    description:
+      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกแวววิเชียร์ ในยามค่ำ คุณมักชื่นชอบอยู่ในความสงบและมีความเข้าใจในอารมณ์สุนทรีย์สูง ความลับที่ไม่เปิดเผยและการดื่มด่ำไปโลกจินตนาการอันแสนวิเศษคือเสน่ห์ของคุณ",
   },
 };
 
@@ -56,19 +79,18 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
           <div className="text-sm">กำลังโหลดบทสรุป...</div>
         </div>
       )}
-      <div className="bg-black text-secondary-dark">
+      <div className=" h-full text-secondary-dark">
         <div className="relative h-screen  mx-auto max-w-md w-full bg-primary-white animate-fade animate-duration-[2000ms] animate-ease-out">
           <div className="absolute max-w-md w-full  inset-0 right-0 left-0 m-auto">
             <Image
-              priority
-              src={`/mystery-market/assets/result/background/lily-bg.webp`}
+              src={`/mystery-market/assets/result/background/${data.name}-bg.webp`}
               fill
               alt="background"
               className="w-full h-full inset-0 "
-              quality={100}
+              // quality={100}
             />
           </div>
-          <div className="rounded-3xl opacity-90 absolute inset-4 bg-gradient-to-b from-transparent via-white/10 to-white"></div>
+          {/* <div className="rounded-3xl opacity-90 absolute inset-4 bg-gradient-to-b from-transparent via-white/10 to-white"></div> */}
 
           <div className="flex justify-center items-center absolute left-8 top-4 animate-fade-up animate-ease-out animate-duration-[1500ms]">
             <Image
@@ -78,62 +100,70 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
               alt="KUTech Logo"
             />
           </div>
-          <div className=" absolute right-0 left-0 bottom-8 animate-fade-up animate-ease-out  animate-duration-[1500ms]">
-            <SocialMedia />
-          </div>
-          <div className="absolute bottom-32 flex flex-col  items-center w-full">
-            {isClient && (
-              <video
-                autoPlay
-                loop
-                muted
-                poster={`/mystery-market/assets/result/flowers-img/${data.name}-img.webp`}
-                playsInline
-                onLoadedData={handleLoadedData}
-                className="px-8"
-              >
-                <source
-                  src="/mystery-market/assets/result/flowers/lily.webm"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
-            )}
-            <div className="flex px-12 justify-between w-full gap-4">
-              <div className="pt-8 text-4xl font-bold">{data.title}</div>
-              <div className="opacity-80 flex flex-col justify-center items-center">
-                <Image
-                  src="/mystery-market/assets/images/qrcode.png"
-                  width={80}
-                  height={80}
-                  alt="background"
-                />
-                <div className="pt-1 text-xs tracking-tight">
-                  หาดอกไม้ของคุณ?
+          <div className="absolute top-8 flex flex-col items-center opacity-90 ">
+            <div className="bg-gradient-to-b from-transparent m-4 pb-4 rounded-3xl via-white/10 to-white">
+              {isClient && (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  poster={`/mystery-market/assets/result/flowers-img/${data.name}-img.webp`}
+                  playsInline
+                  onLoadedData={handleLoadedData}
+                  className="px-4"
+                >
+                  <source
+                    src={`/mystery-market/assets/result/flowers/${data.name}.webm`}
+                    type="video/webm"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              )}
+              <div className="flex justify-between px-8 w-full ">
+                <div className="flex flex-col justify-center">
+                  <div className="text-4xl font-bold">{data.title}</div>
+                  <div className="text-sm pt-1 ">{data.subtitle}</div>
+                </div>
+                <div className="opacity-80  flex flex-col justify-center items-center">
+                  <Image
+                    src="/mystery-market/assets/images/qrcode.png"
+                    width={100}
+                    height={100}
+                    alt="background"
+                  />
+                  <div className="pt-1 text-xs tracking-tight">
+                    หาดอกไม้ของคุณ?
+                  </div>
                 </div>
               </div>
+              <div className="px-8 pt-4 text-md">{data.description}</div>
+              <div className="px-8 flex justify-between gap-4 w-full pt-6">
+                <Link href={"/"} className="w-full">
+                  <button className="w-full h-12 font-medium border-gray-500/30 border-2 rounded-xl">
+                    <div>กลับไปหน้าหลัก</div>
+                  </button>
+                </Link>
+                <button className="w-full h-12 font-medium bg-gradient-to-r from-[#E4CCFF] to-[#C2DBFF] rounded-xl">
+                  <div className="">บันทึกรูปภาพ</div>
+                </button>
+              </div>
+              <div className="pt-8">
+                <SocialMedia />
+              </div>
             </div>
-            <div className="px-12 pt-4 text-md">{data.description}</div>
-            <div className="flex justify-between gap-4 w-full px-12 pt-6">
-              <button className="w-full h-12 font-medium border-gray-500/30 border-2 rounded-xl">
-                <div className="">กลับไปหน้าหลัก</div>
-              </button>
-              <button className="w-full h-12 font-medium bg-gradient-to-r from-[#E4CCFF] to-[#C2DBFF] rounded-xl">
-                <div className="">บันทึกรูปภาพ</div>
-              </button>
+            <Icon
+              className="flex animate-bounce"
+              icon="fe:arrow-down"
+              width={36}
+              height={36}
+            />
+            <div className="bg-primary-white w-full max-w-md pb-8">
+              <Credit />
             </div>
           </div>
         </div>
-        <div className="text-secondary-dark gap-4 py-4 flex flex-col items-center mx-auto max-w-md w-full bg-primary-white ">
-          <Icon
-            className="flex animate-bounce"
-            icon="fe:arrow-down"
-            width={36}
-            height={36}
-          />
-          <Credit />
-          <div></div>
-        </div>
+        <div className="text-secondary-dark h-screen gap-4 py-4 flex flex-col items-center mx-auto max-w-md w-full bg-primary-white "></div>
+        {/* <div className="text-secondary-dark h-screen gap-4 py-4 flex flex-col items-center mx-auto max-w-md w-full bg-primary-white "></div> */}
       </div>
     </>
   );
@@ -143,7 +173,7 @@ export function Credit() {
   return (
     <>
       {/* <div className=" text-3xl font-bold">Credit </div> */}
-      <div className=" text-4xl font-bold">Credit </div>
+      <div className="text-center text-4xl font-bold">Credit </div>
       <div className="pt-1 flex flex-col items-center gap-1">
         <div className="text-sm">Developed By</div>
         <Image
