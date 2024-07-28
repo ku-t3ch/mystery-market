@@ -121,6 +121,10 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
                   className="px-4"
                 >
                   <source
+                    src={`/mystery-market/assets/result/flowers-safari/${data.name}.mov`}
+                    type='video/mp4; codecs="hvc1"'
+                  />
+                  <source
                     src={`/mystery-market/assets/result/flowers/${data.name}.webm`}
                     type="video/webm"
                   />
