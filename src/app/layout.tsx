@@ -8,8 +8,12 @@ const ibm = IBM_Plex_Sans_Thai({ weight: ["400", "700"], subsets: ["thai"] });
 export const metadata: Metadata = {
   title: "MYSTERY MARKET",
   description: "ค้นหาดอกไม้ของคุณในตลาดน้ำราตรีแห่งแสงจันทร์",
-  metadataBase: new URL("https://festival.tech.nisit.ku.ac.th/mystery-market"),
+  // metadataBase: new URL("https://festival.tech.nisit.ku.ac.th"),
   manifest: "/mystery-market/site.webmanifest",
+  openGraph: {
+    images:
+      "https://raw.githubusercontent.com/ku-t3ch/mystery-market/main/public/opengraph-image.jpg",
+  },
 };
 
 export default function RootLayout({

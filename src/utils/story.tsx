@@ -57,7 +57,6 @@ export const story: IStory[] = [
       {
         title: "ห้องโมเดิร์น สไตล์ชิคๆ",
         go: 5,
-        sunflower: 1,
         firstFlower: "sunflower",
       },
       {
