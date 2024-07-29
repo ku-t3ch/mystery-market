@@ -247,10 +247,10 @@ export const story: IStory[] = [
   },
   {
     scene_id: 201,
-    story: "ไม่เข้าไปดูจริงเหรอ?",
+    story: "มีเสียงบางอย่างออกมาจากกล่อง",
     choice: [
-      { title: "ไปดูก็ได้", go: 202, roses: 1 },
-      { title: "อยู่ที่เดิม", go: 201.1 },
+      { title: "ไปดู", go: 202, roses: 1 },
+      { title: "อยู่ที่เดิม", go: 201.1, forgetmenot: 1 },
     ],
     background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
@@ -540,7 +540,7 @@ export const story: IStory[] = [
     title: "มีเสียงบางอย่างออกมาจากกล่อง",
     choice: [
       { title: "ไปดูก็ได้ แต่ไปคนเดียว", go: 303, roses: 1 },
-      { title: "อยู่ที่เดิมกับเพื่อนๆ", go: 303, forgetmenot: 1 },
+      { title: "อยู่ที่เดิมกับเพื่อน", go: 303, forgetmenot: 1 },
     ],
     background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
