@@ -75,7 +75,7 @@ export const story: IStory[] = [
       {
         title: "ห้องที่จัดระเบียบแบ่งเป็นหมวดหมู่",
         go: 5,
-        lilly: 1,
+        lilly: 2,
         firstFlower: "lilly",
       },
       { title: "ห้องที่บรรยากาศเงียบสงบ", go: 5, forgetmenot: 1 },
@@ -168,11 +168,14 @@ export const story: IStory[] = [
         title: "ได้ ๆ ไปกัน",
         go: 13,
         isAlone: false,
+        roses: 1,
       }, // extrovert
       {
         title: "ไว้วันหลังนะ",
         go: 11,
         isAlone: true,
+        forgetmenot: 1,
+        lilly: 1,
       }, // introvert
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
@@ -189,7 +192,7 @@ export const story: IStory[] = [
         go: 12,
         lavender: 1,
       },
-      { title: "นาฬิกาอิเล็กทรอนิกส์ตั้งเตือนความจำ", go: 12, lilly: 1 },
+      { title: "นาฬิกาข้อมือ", go: 12, lilly: 2 },
       { title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ", go: 12, forgetmenot: 1 },
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
@@ -213,7 +216,7 @@ export const story: IStory[] = [
         go: 14,
         lavender: 1,
       },
-      { title: "นาฬิกาอิเล็กทรอนิกส์ตั้งเตือนความจำ", go: 14, lilly: 1 },
+      { title: "นาฬิกาข้อมือ", go: 14, lilly: 2 },
       { title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ", go: 14, forgetmenot: 1 },
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
@@ -392,11 +395,16 @@ export const story: IStory[] = [
         title:
           "ขออยู่ในโลกแห่งความฝันและ<br />จินตนาการไม่มีกาลเวลา ไม่มีกฏเกณฑ์ควบคุม",
         go: 213.1,
+        sunflower: 1,
+        roses: 1,
+        lilly: 1,
       },
       {
         title:
           "ขออยู่ในโลกแห่งความเป็นจริงโดย<br />มีชีวิตที่มั่นคงและได้ทุกอย่างในสิ่งที่มุ่งหวั่ง",
         go: 213.2,
+        forgetmenot: 1,
+        lavender: 1,
       },
     ],
     // background: "/mystery-market/assets/background/boatvod1_047.webp",
@@ -532,7 +540,7 @@ export const story: IStory[] = [
   {
     scene_id: 301,
     title: "เพื่อนของคุณปฏิเสธไม่ไปดูกล่อง</br>เพราะสนใจอาหารตรงหน้ามากกว่า...",
-    choice: [{ title: "ค่อยๆเดินเข้าไปดู", go: 303, lilly: 1 }],
+    choice: [{ title: "ค่อยๆเดินเข้าไปดู", go: 303, lilly: 2 }],
     background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
@@ -572,7 +580,7 @@ export const story: IStory[] = [
   {
     scene_id: 306,
     story:
-      "หลังจากเหตุการณ์ทุกอย่างจบลง <br/>ถึงแม้ว่ามันจะดึกแล้ว<br/>แต่คุณยังรู้สึกไม่อยากกลับบ้าน <br/>จึงชวนเพื่อนไปนั่งพายเรือชมจันทร<br/>ซึ่งเป็นไฮไลท์ของตลาดน้ำราตรีแห่งนี้อีกครั้ง",
+      "หลังจากเหตุการณ์ทุกอย่างจบลง <br/>ถึงแม้ว่ามันจะดึกแล้ว<br/>แต่คุณยังรู้สึกไม่อยากกลับบ้าน <br/>จึงชวนเพื่อนไปนั่งพายเรือชมจันทร์<br/>ซึ่งเป็นไฮไลท์ของตลาดน้ำราตรีแห่งนี้อีกครั้ง",
     background: "/mystery-market/assets/background/boatvod1_047.webp", //เข้าสู่ช่วงบทขอพร บทที่ 2 (ฉากท้องทะเลป่ะ อะไรสักอย่างที่มันฟริ้งๆ)
     go: 311,
   },
