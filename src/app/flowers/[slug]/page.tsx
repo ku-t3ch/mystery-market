@@ -95,7 +95,6 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
               fill
               alt="background"
               className="w-full h-full inset-0 "
-              quality={100}
             />
           </div>
           {/* <div className="rounded-3xl opacity-90 absolute inset-4 bg-gradient-to-b from-transparent via-white/10 to-white"></div> */}
