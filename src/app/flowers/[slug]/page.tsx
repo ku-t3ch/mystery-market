@@ -213,7 +213,6 @@ function Credit() {
         <div className="text-lg font-bold pt-1">Project Manager</div>
         <div className="flex flex-col items-center gap-1">
           <div className="text-xs ">Lullalil Jupanich</div>
-          <div className="text-xs ">Panupong Lertveeranontarat</div>
         </div>
         <div className="text-lg font-bold pt-4">Story</div>
         <div className="flex flex-col items-center gap-1">

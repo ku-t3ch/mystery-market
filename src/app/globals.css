@@ -39,6 +39,6 @@
 }
 
 .choice-button {
-  @apply flex flex-row items-center justify-center rounded-xl gap-4 p-4 bg-primary-dark/30  animate-fade-up animate-duration-[1500ms]  animate-ease-out;
+  @apply flex flex-row items-center justify-center rounded-xl gap-4 p-4 bg-primary-dark/40  animate-fade-up animate-duration-[1500ms]  animate-ease-out;
 }
 

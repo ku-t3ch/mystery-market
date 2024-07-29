@@ -8,9 +8,10 @@ export interface IChoice {
   lavender?: number;
   lilly?: number;
   forgetmenot?: number;
-  selectedAnimal?: string;
+  selectedAnimal?: boolean;
   dog?: boolean;
   cat?: boolean;
+  reality?: boolean;
 }
 
 export interface IStory {
@@ -36,6 +37,7 @@ export interface IStateKeep {
   forgetmenot: number;
   dog: boolean;
   cat: boolean;
-  selectedAnimal: string;
+  selectedAnimal: boolean;
   firstFlower: string;
+  reality: boolean;
 }

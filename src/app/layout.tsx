@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "MYSTERY MARKET",
   description: "ค้นหาดอกไม้ของคุณในตลาดน้ำราตรีแห่งแสงจันทร์",
   metadataBase: new URL("https://mystery-market.netlify.app/mystery-market"),
-  // manifest: "/mystery-market/site.webmanifest",
+  manifest: "/mystery-market/site.webmanifest",
 };
 
 export default function RootLayout({
