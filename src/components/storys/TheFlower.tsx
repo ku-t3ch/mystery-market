@@ -14,16 +14,16 @@ export default function TheFlower() {
 
   function getHighestFlower(
     sunflower: number,
-    roses: number,
+    rose: number,
     lavender: number,
-    lilly: number,
+    lily: number,
     forgetmenot: number
   ): string {
     const flowerCounts = [
       { name: "sunflower", count: sunflower },
-      { name: "roses", count: roses },
+      { name: "rose", count: rose },
       { name: "lavender", count: lavender },
-      { name: "lilly", count: lilly },
+      { name: "lily", count: lily },
       { name: "forgetmenot", count: forgetmenot },
     ];
 

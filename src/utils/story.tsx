@@ -602,7 +602,13 @@ export const story: IStory[] = [
   },
   {
     scene_id: 310,
-    story: "เพื่อนของคุณเข้าไปปลอบเด็กคนนั้น", // เพิ่มfunctionใส่ข้อความ
+    story: "เพื่อนของคุณเข้าไปปลอบเด็กคนนั้น คุณเองก็เช่นกัน", // เพิ่มfunctionใส่ข้อความ
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 310.1,
+  },
+  {
+    scene_id: 310.1,
+    story: "เด็กน้อยได้ให้กระดาษเกี่ยวกับดอกไม้<br/>ให้กับคุณและเพื่อนของคุณ", // เพิ่มfunctionใส่ข้อความ
     background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 306,
   },
