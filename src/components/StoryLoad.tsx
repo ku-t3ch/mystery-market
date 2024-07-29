@@ -24,8 +24,9 @@ const Story = () => {
         forgetmenot: 0,
         dog: false,
         cat: false,
-        selectedAnimal: "",
+        selectedAnimal: false,
         firstFlower: "",
+        reality: false,
       },
     ]
   );
@@ -45,10 +46,11 @@ const Story = () => {
   );
   const [dog, setDog] = useLocalStorage<boolean>("dog", false);
   const [cat, setCat] = useLocalStorage<boolean>("cat", false);
-  const [selectedAnimal, setSelectedAnimal] = useLocalStorage<string>(
+  const [selectedAnimal, setSelectedAnimal] = useLocalStorage<boolean>(
     "selectedAnimal",
-    ""
+    false
   );
+  const [reality, setReality] = useLocalStorage<boolean>("reality", true);
 
   const goToScene = (scene_id: number | null) => {
     if (scene_id != null) {
@@ -68,10 +70,10 @@ const Story = () => {
           cat,
           selectedAnimal,
           firstFlower,
+          reality,
         },
       ]);
     }
-    console.log("screenkeep", screenKeep);
   };
 
   const goToPreviousScene = () => {
@@ -90,6 +92,7 @@ const Story = () => {
       setCat(newScreenKeep[newScreenKeep.length - 1].cat);
       setSelectedAnimal(newScreenKeep[newScreenKeep.length - 1].selectedAnimal);
       setFirstFlower(newScreenKeep[newScreenKeep.length - 1].firstFlower);
+      setReality(newScreenKeep[newScreenKeep.length - 1].reality);
     }
   };
 
@@ -125,6 +128,9 @@ const Story = () => {
     if (choice.firstFlower != null) {
       setFirstFlower(choice.firstFlower);
     }
+    if (choice.reality != null) {
+      setReality(choice.reality);
+    }
     goToScene(choice.go);
   };
 
@@ -134,7 +140,7 @@ const Story = () => {
     if (!currentScene) {
       localStorage.clear();
     }
-  }, [currentScene, setCurrentScene]);
+  }, [currentScene]);
 
   // useEffect(() => {
   //   // อย่าลืมลบ
@@ -182,9 +188,10 @@ const Story = () => {
       {/* audio */}
       <ReactAudioPlayer
         id="audio"
-        src="/mystery-market/assets/audio/Le Cygne (The Swan) Resize.mp3"
+        src={`/mystery-market/assets/audio/Le Cygne (The Swan) Resize.mp3`}
         autoPlay
         loop
+        volume={0.1}
         // controls
       />
 
@@ -252,7 +259,7 @@ const Story = () => {
                 <Icon
                   onClick={goToPreviousScene}
                   icon="ic:baseline-navigate-before"
-                  className="bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10 rounded-full hover:cursor-pointer text-4xl"
+                  className="bg-primary-dark/20 rounded-full hover:cursor-pointer text-4xl"
                 />
               </div>
             </div>
@@ -310,7 +317,7 @@ const Story = () => {
                             key={choiceIndex}
                             onClick={() => checkChoice(choice)}
                             // className="flex flex-row items-center justify-center font-bold text-sm rounded-xl gap-3 p-4 bg-[##D9D9D91A] backdrop-filter backdrop-blur-lg shadow-sm shadow-black/10"
-                            className="flex flex-row items-center justify-center rounded-xl gap-4 p-4 bg-primary-dark/30  animate-fade-up animate-duration-[1500ms]  animate-ease-out"
+                            className="choice-button"
                             style={{
                               animationDelay: `${500 + choiceIndex * 300}ms`,
                             }}

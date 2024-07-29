@@ -31,9 +31,9 @@ export default function UserEnterName() {
   return (
     <>
       {/* story */}
-      <div className="flex flex-col items-center justify-center h-full w-full gap-8">
+      <div className="flex flex-col items-center justify-center h-full w-full gap-8 animate-fade animate-ease-out animate-duration-[1500ms]">
         <p>
-          <span className="text-primary-blue">สวัสดีนะ </span>
+          <span className="text-primary-blue ">สวัสดีนะ </span>
           <span>เธอที่รัก</span>
           <p>ยินดีที่ได้รู้จัก</p>
           <p>เธอชื่ออะไรหรอ...</p>

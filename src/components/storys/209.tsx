@@ -9,7 +9,10 @@ export default function MarketTextField() {
     "screenKeep",
     []
   );
-  const [messageStore, setMessageStorage] = useLocalStorage<string>("message", "");
+  const [messageStore, setMessageStorage] = useLocalStorage<string>(
+    "message",
+    ""
+  );
 
   const onNextSceneButton = () => {
     const nextScene = 204;

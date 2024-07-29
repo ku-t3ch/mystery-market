@@ -1,7 +1,6 @@
 import React from "react";
 
 const CopyRight = React.memo(({ currentScene }: { currentScene: number }) => {
-  console.log(currentScene);
   return (
     <>
       <div

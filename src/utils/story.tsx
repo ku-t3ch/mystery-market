@@ -10,6 +10,7 @@ import PreAloneEnding from "@/components/storys/215";
 import EndingNote from "@/components/storys/225";
 import Garden from "@/components/storys/17";
 import Ocean from "@/components/storys/Ocean";
+import TheFlower from "@/components/storys/TheFlower";
 
 // ในกรณีที่ต้องที่ choice มีการเช็คเงื่อนไข ให้ทำการสร้าง component ใส่ children
 // tip: กรณีท่่ี่พื้นหลังเป็น .mp4 ให้ทำการ hardcode ที่ page หลักเลย ตามตัวอย่างที่ทำไว้ (หรือมีวิธีที่ดีกว่าก็ฝากทำด้วยขอบใจ)
@@ -36,7 +37,15 @@ export const story: IStory[] = [
     scene_id: 3,
     title: "<p class='text-primary-blue'>บทนำ</p>",
     story:
-      "ท่ามกลามพายุฝนที่โหมซัดกระหน่ำ<br />เสียงพ่อค้าแม่ค้าเจื้อยแจ้วตลอดทาง<br />ผู้คนเร่งรีบกลับบ้านในยามค่ำคืน<br />............<br />คุณพึ่งเสร็จจากการทำงาน<br />เดินทางกลับบ้านด้วยใบหน้าที่เหนื่อยล้า.<br />เหมือนเดิมทุกๆวัน อย่างไร้จุดหมาย....<br />และในที่สุดก็กลับมาถึงบ้าน",
+      "ท่ามกลามพายุฝนที่โหมซัดกระหน่ำ<br />เสียงพ่อค้าแม่ค้าเจื้อยแจ้วตลอดทาง<br />ผู้คนเร่งรีบกลับบ้านในยามค่ำคืน<br />",
+    poster: "/mystery-market/assets/background/rainbackground-resize.webp",
+    go: 3.1,
+  },
+
+  {
+    scene_id: 3.1,
+    story:
+      "คุณพึ่งเสร็จจากการทำงาน<br />เดินทางกลับบ้านด้วยใบหน้าที่เหนื่อยล้า.<br />เหมือนเดิมทุกๆวัน อย่างไร้จุดหมาย....<br />และในที่สุดก็กลับมาถึงบ้าน",
     poster: "/mystery-market/assets/background/rainbackground-resize.webp",
     go: 4,
   },
@@ -85,7 +94,7 @@ export const story: IStory[] = [
     scene_id: 6,
     story: "ขณะที่คุณเล่นโทรศัพท์อยู่<br/>จู่ๆก็มีข้อความเด้งขึ้นมา",
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
-    go: 8,
+    go: 8.1,
   },
   {
     scene_id: 7,
@@ -121,7 +130,7 @@ export const story: IStory[] = [
     scene_id: 8.4,
     title: `จะไม่อ่านจริง ๆ หรอ`,
     choice: [
-      { title: "อ่านข้อความ", go: 10 },
+      { title: "อ่านก็ได้", go: 10 },
       { title: "ไม่อ่าน", go: 8.5 }, // bad ending
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
@@ -141,7 +150,7 @@ export const story: IStory[] = [
   },
   {
     scene_id: 10,
-    title: `"{getName}ไปตลาดน้ำ<br/>เป็นเพื่อนเราหน่อยสิ"`,
+    title: `"{getName} ไปตลาดน้ำ<br/>เป็นเพื่อนเราหน่อยสิ"`,
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
     go: 10.1,
   },
@@ -238,119 +247,142 @@ export const story: IStory[] = [
   },
   {
     scene_id: 201,
-    story: "Question : เธอจะไม่เข้าไปดูจริงๆเหรอ?",
+    story: "มีเสียงบางอย่างออกมาจากกล่อง",
     choice: [
-      { title: "ไปดูก็ได้", go: 202, roses: 1 },
-      { title: "อยู่ที่เดิม", go: 201.1 },
+      { title: "ไปดู", go: 202, roses: 1 },
+      { title: "อยู่ที่เดิม", go: 201.1, forgetmenot: 1 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 201.1,
-    story: "จนกระทั่งสักพัก คุณเริ่มเบื่อ จึงลุกขึ้นแล้วเดินเข้าไป",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    story: "คุณรออาหารจนเสร็จ กินอาหาร <br/>จากนั้นก็เดินไปเดินเล่นต่อ",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 201.2,
+  },
+  {
+    scene_id: 201.2,
+    story: "อยู่ๆ แสงข้างทางก็ค่อยๆมืดลง <br/> แต่คุณก็ยังคงเดินตรงไป",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 202,
   },
   {
     scene_id: 202,
     story: "เมื่อคุณเดินเข้าไป คุณพบกับ....",
     choice: [
-      { title: "สัตว์เลี้ยงที่สภาพมอมแมม", go: 203 },
-      { title: "ความว่างเปล่า", go: 204 },
-      { title: "คุณพบเด็กน้อยกำลังร้องไห้อยู่", go: 205 },
+      { title: "สัตว์เลี้ยงที่สภาพมอมแมม", go: 203, selectedAnimal: true },
+      { title: "เด็กผู้หญิงตัวเล็กคนนึง", go: 205 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 203,
     story: "สัตว์ตัวนั้นคือ...",
     choice: [
-      { title: "น้องหมา", go: 206, selectedAnimal: "dog" },
-      { title: "น้องแมว", go: 207, selectedAnimal: "cat" },
+      { title: "น้องหมา", go: 206 },
+      { title: "น้องแมว", go: 207 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 204,
     story:
       "หลังจากเหตุการณ์ทุกอย่างจบลง<br />ถึงแม้ว่ามันจะดึกแล้ว<br />แต่คุณยังรู้สึกไม่อยากกลับบ้าน<br />จึงไปนั่งเรือพายชมแสงจันทร์<br />" +
       "ซึ่งเป็นไฮไลท์ของตลาดน้ำราตรีแห่งนี้อีกครั้ง",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 210,
   },
   {
     scene_id: 205,
-    story: "คุณพบเด็กน้อยกำลังร้องไห้อยู่",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    story: "ระหว่างทางคุณพบเด็กน้อยกำลังในมือถือกระดาษรูปภาพดอกไม้",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 209,
   },
   {
     scene_id: 206,
-    story:
-      "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องหมาตัวนี้ดี",
+    story: "สภาพของมันไม่ค่อยสู้ดีนัก</br>คุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องหมา)", go: 208, dog: true },
-      { title: "ไม่เทน้ำให้กิน (ไม่มีน้องหมา)", go: 208 },
+      { title: "เทน้ำให้กิน", go: 208.1, dog: true },
+      { title: "ไม่เทน้ำให้กิน", go: 208.2 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 207,
-    story:
-      "สภาพของมันไม่ค่อยสู้ดีนัก</br>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่คุณจะ....</br>ทำอย่างไรกับน้องแมวตัวนี้ดี",
+    story: "สภาพของมันไม่ค่อยสู้ดีนัก</br>คุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่",
     choice: [
-      { title: "เทน้ำให้กิน (มีน้องแมว)", go: 208, cat: true },
-      { title: "ไม่เทน้ำให้กิน (ไม่มีน้องแมว)", go: 208 },
+      { title: "เทน้ำให้กิน", go: 208.1, cat: true },
+      { title: "ไม่เทน้ำให้กิน", go: 208.2 },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
-    scene_id: 208,
-    story: "ระหว่างเดินกลับไปที่โต๊ะคุณก็ได้พบกับ",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    scene_id: 208.1,
+    story:
+      "หลังจากที่คุณให้น้ำสัตว์เสร็จแล้ว</br> คุณจึงเดินไปกลับไปที่โต๊ะของคุณ",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 205,
+  },
+  {
+    scene_id: 208.2,
+    story: "คุณเดินออกมาและกลับไปที่โต๊ะของคุณ",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 205,
   },
   {
     scene_id: 209,
-    children: <MarketTextField />,
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    story: "ไม่รู้ทำไมแต่คุณรู้สึก<br/>เหมือนเคยผ่านเหตุการณ์นี้มาก่อน",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 209.1,
+  },
+  {
+    scene_id: 209.1,
+    story: "คุณเข้าไปกอดเด็กน้อยคนนี้ <br/>เด็กน้อยคอยๆสงบลง",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 210,
   },
   {
     scene_id: 210,
     story:
-      "แต่ทว่าคุณกลับรู้สึกง่วงนอนแปลกๆ<br /> ความรู้สึกสุดท้ายที่คุณจำได้คือหนังตาที่เริ่มหย่อนลง <br />ความรู้สึกที่เหมือนตกจากเรือ<br />จมลงสู่แม่น้ำในห้วงลึกด่ำดึ่งลงไป…",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+      "อยู่ ๆ คุณกลับรู้สึกง่วงนอนแปลก ๆ<br /> ความรู้สึกสุดท้ายที่คุณจำได้คือหนังตาที่เริ่มหย่อนลง <br />ความรู้สึกที่ค่อย ๆ ล่องลอยไป<br />",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 210.1,
   },
   {
     scene_id: 210.1,
-    title: "จมลงสู่แม่น้ำในห้วงลึกด่ำดึ่งลงไป…",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    title: "คุณค่อย ๆ จมลงไปสู่แม่น้ำในห้วงลึก",
+    // background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 210.2,
   },
   {
     scene_id: 210.2,
     title: ". . .",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    // background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 211,
   },
   {
     scene_id: 211,
     story:
       "เมื่อคุณลืมตามาอีกที<br />" +
-      "คุณพบว่า ตัวเองอยู่ในห้วงสายธารแห่งท้องทะเลสีคราม<br />" +
-      "และได้พบกับภูตที่มอบพรวิเศษ 1 ข้อ<br />" +
-      "พรนี้เป็นพรขอบคุณ<br />" +
-      "สำหรับการเดินทางตลาดราตรีแสงจันทร์ในคืนนี้<br />" +
-      "เมื่อคุณเลือกไปแล้ว<br />" +
-      "คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br />",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+      "คุณพบว่าตัวเองอยู่ในห้วงสายธารแห่งท้องทะเลสีคราม<br />" +
+      "และได้พบกับภูตที่มอบพรวิเศษ 1 ข้อ<br />",
+
+    // background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 211.1,
   },
   {
     scene_id: 211.1,
+    story:
+      "พรนี้เป็นพรขอบคุณผู้มาเยือน<br />ตลาดราตรีแสงจันทร์ในคืนนี้" +
+      "และเมื่อคุณเลือกไปแล้ว<br />" +
+      "คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br />",
+    // background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 211.2,
+  },
+  {
+    scene_id: 211.2,
     title: " โปรดเลือกในสิ่งที่คุณปรารถนามากที่สุด",
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    // background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 212,
   },
   {
@@ -359,34 +391,83 @@ export const story: IStory[] = [
       {
         title:
           "ขออยู่ในโลกแห่งความฝันและ<br />จินตนาการไม่มีกาลเวลา ไม่มีกฏเกณฑ์ควบคุม",
-        go: 213,
+        go: 213.1,
       },
       {
         title:
           "ขออยู่ในโลกแห่งความเป็นจริงโดย<br />มีชีวิตที่มั่นคงและได้ทุกอย่างในสิ่งที่มุ่งหวั่ง",
-        go: 214,
+        go: 213.2,
       },
     ],
-    background: "/mystery-market/assets/background/roombgdark.jpg",
+    // background: "/mystery-market/assets/background/boatvod1_047.webp",
+  },
+  {
+    scene_id: 213.1,
+    title: "คุณสะดุ้งตื่นขึ้นมาจากความฝัน",
+    go: 213,
+    background: "/mystery-market/assets/background/roombglight.webp",
+  },
+  {
+    scene_id: 213.2,
+    title: "คุณกลับมาสู่โลกความเป็นจริง",
+    go: 213,
+    background: "/mystery-market/assets/background/roombglight.webp",
   },
   {
     scene_id: 213,
     story:
       "แสงยามเช้าอันสดใส<br />เสียงนกที่คอยร้องเพลงในตอนเช้าตรู่<br />จนทำให้คุณเริ่มรู้สึกตัว<br />เมื่อลืมตาตื่นขึ้นมาคุณก็" +
       "ได้ยินเสียงนาฬิกาปลุก<br />ที่ดังตามเวลาที่เคยเป็นเฉกเช่นกิจวัตรประจำวัน",
-    go: 215,
+    go: 214,
+    background: "/mystery-market/assets/background/roombglight.webp",
   },
   {
     scene_id: 214,
     story:
-      "แสงยามเช้าอันสดใส <br />เสียงนกที่คอยร้องเพลงในตอนเช้าตรู่<br />ทำให้คุณรู้สึกตัวและลืมตาตื่นขึ้นมา<br />" +
-      "คุณก็ได้ยินเสียงนาฬิกาปลุกที่ดังตามเวลาเช่นเคย<br />หลังจากที่ปิดนาฬิกาปลุกแล้ว<br />คุณสำรวจกับตัวเอง<br />แล้วพบว่า….",
-    go: 215,
+      "หลังจากที่ปิดนาฬิกาไปแล้ว<br />คุณก็นึกถึงเรื่องราวที่เกิดขึ้นเมื่อวาน<br />คุณคว้าโทรศัพท์เพื่อค้นหาเกี่ยวกับตลาดน้ำราตรีนั้น",
+    go: 215.1,
+    background: "/mystery-market/assets/background/roombglight.webp",
+  },
+
+  {
+    scene_id: 215.1,
+    title: "แต่ก็พบว่าไม่มีใครเขียน<br/>เรื่องตลาดน้ำราตรีแห่งนี้เลย",
+    go: 1000,
   },
   {
-    scene_id: 215,
-    children: <PreAloneEnding />,
+    scene_id: 1000,
+
+    choice: [
+      {
+        title: "เข้าสู่บทสุดท้าย",
+        go: 1001,
+      },
+    ],
   },
+  {
+    scene_id: 1001,
+    children: <EndingNote />,
+    background: "/mystery-market/assets/background/roombglight.webp",
+    go: 1002,
+  },
+  {
+    scene_id: 1002,
+    story: "ที่โต๊ะของคุณมีดอกไม้และกระดาษใบหนึ่ง คุณอ่านข้อความในกระดาษ",
+    background: "/mystery-market/assets/background/roombglight.webp",
+    go: 1002.1,
+  },
+  {
+    scene_id: 1002.1,
+    title: "คุณมาเพื่อสิ่งนี้ใช่มั้ยละ รับไปสิ",
+    background: "/mystery-market/assets/background/roombglight.webp",
+    go: 1003,
+  },
+  {
+    scene_id: 1003,
+    children: <TheFlower />,
+    background: "/mystery-market/assets/background/roombglight.webp",
+  },
+
   {
     scene_id: 216,
     story:
@@ -445,36 +526,38 @@ export const story: IStory[] = [
     scene_id: 225,
     children: <EndingNote />,
   },
+
+  // -----------------------------------------------
+
   {
     scene_id: 301,
     title: "เพื่อนของคุณปฏิเสธไม่ไปดูกล่อง</br>เพราะสนใจอาหารตรงหน้ามากกว่า...",
     choice: [{ title: "ค่อยๆเดินเข้าไปดู", go: 303, lilly: 1 }],
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 302,
-    title: "เธอจะไม่เข้าไปดูจริงๆเหรอ",
+    title: "มีเสียงบางอย่างออกมาจากกล่อง",
     choice: [
       { title: "ไปดูก็ได้ แต่ไปคนเดียว", go: 303, roses: 1 },
-      { title: "อยู่ที่เดิมกับเพื่อนๆ", go: 303, forgetmenot: 1 },
+      { title: "อยู่ที่เดิมกับเพื่อน", go: 303, forgetmenot: 1 },
     ],
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 303,
-    title: "เมื่อคุณเดินเข้าไป คุณพบกับ",
+    title: "เมื่อคุณเดินเข้าไป คุณพบกับ...",
     choice: [
       { title: "เด็กน้อยกำลังร้องไห้อยู่", go: 304 },
-      { title: "สัตว์เลี้ยงที่สภาพมอมแมม", go: 305 },
-      { title: "ความว่างเปล่า", go: 306 },
+      { title: "สัตว์เลี้ยงที่สภาพมอมแมม", go: 305, selectedAnimal: true },
     ],
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 304,
     story:
-      "คุณรู้สึกแปลกใจที่เสียงร้องไห้ของเด็กคนนั้น<br/>คุ้นเคยอย่างแปลกประหลาด<br/>ดังนั้นคุณจึงตัดสินใจเข้าไปพูดคุยกับเด็กคนนั้น<br/>...........<br/>ก่อนจากลา<br/>คุณต้องการให้กำลังใจเด็กน้อยคนนั้น<br/>จึงเขียนกระดาษโน๊ตว่า",
-    background: "/mystery-market/assets/background/oceanbackground.png",
+      "คุณรู้สึกแปลกใจที่เสียงร้องไห้ของเด็กคนนั้น<br/>คุ้นเคยอย่างแปลกประหลาด<br/>เพื่อนของคุณก็เข้าไปกับคุณเช่นกัน",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 310,
   },
   {
@@ -484,58 +567,78 @@ export const story: IStory[] = [
       { title: "น้องหมา", go: 307 },
       { title: "น้องแมว", go: 308 },
     ],
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 306,
     story:
-      "หลังจากเหตุการณ์ทุกอย่างจบลง ..........<br/>ถึงแม้ว่ามันจะดึกแล้ว<br/>แต่คุณยังรู้สึกไม่อยากกลับบ้าน <br/>จึงชวนเพื่อนไปนั่งพายเรือชมจันทร<br/>ซึ่งเป็นไฮไลท์ของตลาดน้ำราตรีแห่งนี้อีกครั้ง",
-    background: "/mystery-market/assets/background/oceanbackground.png", //เข้าสู่ช่วงบทขอพร บทที่ 2 (ฉากท้องทะเลป่ะ อะไรสักอย่างที่มันฟริ้งๆ)
+      "หลังจากเหตุการณ์ทุกอย่างจบลง <br/>ถึงแม้ว่ามันจะดึกแล้ว<br/>แต่คุณยังรู้สึกไม่อยากกลับบ้าน <br/>จึงชวนเพื่อนไปนั่งพายเรือชมจันทร<br/>ซึ่งเป็นไฮไลท์ของตลาดน้ำราตรีแห่งนี้อีกครั้ง",
+    background: "/mystery-market/assets/background/boatvod1_047.webp", //เข้าสู่ช่วงบทขอพร บทที่ 2 (ฉากท้องทะเลป่ะ อะไรสักอย่างที่มันฟริ้งๆ)
     go: 311,
   },
   {
     scene_id: 307,
-    title:
-      "สภาพของมันไม่ค่อยสู้ดีนัก<br/>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่ <br/> คุณจะ....ทำอย่างไรกับน้องหมาตัวนี้ดี",
+    title: "สภาพของมันไม่ค่อยสู้ดีนัก<br/>คุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่",
     choice: [
       { title: "เทน้ำให้กิน", go: 309, dog: true },
       { title: "ไม่เทน้ำให้กิน", go: 309 },
     ],
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 308,
-    title:
-      "สภาพของมันไม่ค่อยสู้ดีนัก<br/>โชคดีคุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่ <br/> คุณจะ....ทำอย่างไรกับน้องแมวตัวนี้ดี",
+    title: "สภาพของมันไม่ค่อยสู้ดีนัก<br/>คุณมีขวดน้ำที่ยังไม่ได้เปิดอยู่",
     choice: [
       { title: "เทน้ำให้กิน", go: 309, cat: true },
       { title: "ไม่เทน้ำให้กิน", go: 309 },
     ],
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
   {
     scene_id: 309,
     story: "ระหว่างเดินกลับไปที่โต๊ะคุณก็ได้พบกับ<br/>เด็กน้อยกำลังร้องไห้อยู่",
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 304,
   },
   {
     scene_id: 310,
-    story: "{input_text} ใส่ข้อความให้เด็กน้อย", // เพิ่มfunctionใส่ข้อความ
-    background: "/mystery-market/assets/background/oceanbackground.png",
+    story: "เพื่อนของคุณเข้าไปปลอบเด็กคนนั้น คุณเองก็เช่นกัน", // เพิ่มfunctionใส่ข้อความ
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 310.1,
+  },
+  {
+    scene_id: 310.1,
+    story: "เด็กน้อยได้ให้กระดาษเกี่ยวกับดอกไม้<br/>ให้กับคุณและเพื่อนของคุณ", // เพิ่มfunctionใส่ข้อความ
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 306,
   },
   {
     scene_id: 311,
     story:
-      "แม้ว่าจะมีเสียงคุยและดนตรีบรรเลง<br/>แต่ทว่าคุณกลับรู้สึกง่วงนอนแปลกๆ<br/>ระหว่างที่นั่งเรือกับเพื่อน<br/><br/>สิ่งสุดท้ายที่คุณจำได้<br/>คือหนังตาที่เริ่มหย่อนลง <br/>ความรู้สึกที่เหมือนตกจากเรือ <br/> แล้วจมลงสู่แม่น้ำดำดิ่งลงไป……",
-    background: "/mystery-market/assets/background/oceanbackground.png",
+      "แม้ว่าจะมีเสียงคุยและดนตรีบรรเลง<br/>แต่ทว่าคุณกลับรู้สึกง่วงนอนแปลกๆ<br/>คุณหันไปดูรอบตัวคุณ",
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 312.1,
+  },
+
+  {
+    scene_id: 312.1,
+    story:
+      "เพื่อนของคุณหายไป<br/>หนังตาคุณเริ่มหย่อนลง<br/>ความรู้สึกที่เหมือนตกจากเรือ",
+    //background: , //อันนี้จะเป็นหน้าที่ไม่ได้มีช้อยเลือก ฉากเป็นเหมือนหน้าหนังสือ
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
+    go: 210.1,
+  },
+  {
+    scene_id: 312.2,
+    story: "210.1",
+    //background: , //อันนี้จะเป็นหน้าที่ไม่ได้มีช้อยเลือก ฉากเป็นเหมือนหน้าหนังสือ
+    background: "/mystery-market/assets/background/boatvod1_047.webp",
     go: 312,
   },
   {
     scene_id: 312,
     story:
-      "เมื่อคุณลืมตามาอีกที<br/>คุณพบว่า ตัวเองอยู่ในห้วงสายธารแห่งท้องทะเลสีคราม <br/>และได้พบกับภูตที่มอบพรวิเศษ 1 ข้อ<br/>พรนี้เป็นพรขอบคุณ <br/>สำหรับการเดินทางตลาดราตรีแสงจันทร์ในคืนนี้<br/>เมื่อคุณเลือกไปแล้ว<br/>คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br/>เพราะฉะนั้น โปรดเลือกในสิ่งที่คุณปรารถนามากที่สุด",
+      "เมื่อคุณลืมตามาอีกที<br/>คุณพบว่า ตัวเองอยู่ในห้วงสายธารแห่งท้องทะเลสีคราม <br/>และได้พบกับภูตที่มอบพรวิเศษ 1 ข้อ<br/>พรนี้เป็นสำหรับผู้เดินทาง<br/>สำหรับตลาดราตรีแสงจันทร์ในคืนนี้<br/>เมื่อคุณเลือกไปแล้ว<br/>คุณจะไม่สามารถเปลี่ยนแปลงมันได้อีก<br/>เพราะฉะนั้น โปรดเลือกในสิ่งที่คุณปรารถนามากที่สุด",
     //background: , //อันนี้จะเป็นหน้าที่ไม่ได้มีช้อยเลือก ฉากเป็นเหมือนหน้าหนังสือ
     go: 313,
   },
@@ -543,8 +646,8 @@ export const story: IStory[] = [
     scene_id: 313,
     title: null,
     choice: [
-      { title: "ขออยู่ในโลกแห่งความฝันและจินตนาการ", go: 314 }, //ไปผลลัพธ์ ending 13-16
-      { title: "ขออยู่ในโลกแห่งความเป็นจริง", go: 314 }, // ไปผลลัพธ์ ending 17-21
+      { title: "ขออยู่ในโลกแห่งความฝันและจินตนาการ", go: 314, reality: false }, //ไปผลลัพธ์ ending 13-16
+      { title: "ขออยู่ในโลกแห่งความเป็นจริง", go: 314, reality: true }, // ไปผลลัพธ์ ending 17-21
     ],
     //background: , ฉากเป็นเหมือนหน้าหนังสือ
   },

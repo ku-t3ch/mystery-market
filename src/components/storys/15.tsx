@@ -89,7 +89,7 @@ export default function Market01() {
           </div>
           <div className="flex flex-col gap-4 pb-8">
             <button
-              onClick={() => setCurrentScene(16)}
+              onClick={() => onNextScene(3)}
               className=" choice-button animate-delay-[800ms]"
             >
               <p className="choice-number">1</p>
@@ -98,7 +98,7 @@ export default function Market01() {
               </p>
             </button>
             <button
-              onClick={() => setCurrentScene(16)}
+              onClick={() => onNextScene(4)}
               className="animate-delay-[1100ms] choice-button"
             >
               <p className="choice-number">2</p>

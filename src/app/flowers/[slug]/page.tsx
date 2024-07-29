@@ -35,7 +35,7 @@ const Title: Record<TitleKeys, TitleInfo> = {
     title: "Lavender",
     subtitle: "ใส่ใจเธออยู่ตลอด",
     description:
-      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกลาเวนเดอร์ ในยามเย็น คุณมักจะชอบใส่ใจรายละเอียดและความรับผิดชอบต่องานที่ทำสูง ความพิถีพิถันปราณีตและการควบคุมอารมณ์ที่เป็นเลิศคือเสน่ห์ของคุณ",
+      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกลาเวนเดอร์ ในยามเย็น คุณมักจะชอบใส่ใจรายละเอียดและความรับผิดชอบต่องาน ความพิถีพิถันปราณีตและการควบคุมอารมณ์คือเสน่ห์ของคุณ",
   },
   rose: {
     name: "rose",
@@ -49,7 +49,7 @@ const Title: Record<TitleKeys, TitleInfo> = {
     title: "Forget Me Not",
     subtitle: "สัญลักษณ์ของรักแท้",
     description:
-      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกแวววิเชียร์ ในยามค่ำ คุณมักชื่นชอบอยู่ในความสงบและมีความเข้าใจในอารมณ์สุนทรีย์สูง ความลับที่ไม่เปิดเผยและการดื่มด่ำไปโลกจินตนาการอันแสนวิเศษคือเสน่ห์ของคุณ",
+      "ถึงเธอที่รัก เธอช่างเหมือนดั่งดอกแวววิเชียร์ ในยามค่ำ คุณมักชื่นชอบความสงบและมีเข้าใจในอารมณ์สุนทรีย์สูง ความลับที่ไม่เปิดเผยและการดื่มด่ำไปโลกจินตนาการอันแสนวิเศษคือเสน่ห์ของคุณ",
   },
 };
 
@@ -60,6 +60,15 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  const downloadImg = () => {
+    const link = document.createElement("a");
+    link.href = "public/assets/result/ig/sunflower.png";
+    link.download = "sunflower.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const handleLoadedData = () => {
     setIsLoading(false);
@@ -79,19 +88,18 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
         </div>
       )}
       <div className=" h-full text-secondary-dark">
-        <div className="relative h-screen  mx-auto max-w-md w-full bg-primary-white animate-fade animate-duration-[2000ms] animate-ease-out">
-          <div className="absolute max-w-md w-full  inset-0 right-0 left-0 m-auto">
+        <div className="relative h-screen  mx-auto max-w-lg w-full bg-primary-white animate-fade animate-duration-[2000ms] animate-ease-out">
+          <div className="absolute max-w-lg w-full  inset-0 right-0 left-0 m-auto">
             <Image
               src={`/mystery-market/assets/result/background/${data.name}-bg.webp`}
               fill
               alt="background"
               className="w-full h-full inset-0 "
-              // quality={100}
             />
           </div>
           {/* <div className="rounded-3xl opacity-90 absolute inset-4 bg-gradient-to-b from-transparent via-white/10 to-white"></div> */}
 
-          <div className="flex justify-center items-center absolute left-8 top-4 animate-fade-up animate-ease-out animate-duration-[1500ms]">
+          <div className="flex justify-center items-center absolute right-8 top-16 animate-fade-up animate-ease-out animate-duration-[1500ms]">
             <Image
               src="/mystery-market/assets/images/KUTechBlack.webp"
               width={60}
@@ -112,6 +120,10 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
                   className="px-4"
                 >
                   <source
+                    src={`/mystery-market/assets/result/flowers-safari/${data.name}.mov`}
+                    type='video/mp4; codecs="hvc1"'
+                  />
+                  <source
                     src={`/mystery-market/assets/result/flowers/${data.name}.webm`}
                     type="video/webm"
                   />
@@ -123,7 +135,7 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
                   <div className="text-4xl font-bold">{data.title}</div>
                   <div className="text-sm pt-1 ">{data.subtitle}</div>
                 </div>
-                <div className="opacity-80  flex flex-col justify-center items-center">
+                <div className="opacity-95  flex flex-col justify-center items-center">
                   <Image
                     src="/mystery-market/assets/images/qrcode.png"
                     width={100}
@@ -138,13 +150,30 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
               <div className="px-8 pt-4 text-md">{data.description}</div>
               <div className="px-8 flex justify-between gap-4 w-full pt-6">
                 <Link href={"/"} className="w-full">
-                  <button className="w-full h-12 font-medium border-gray-500/30 border-2 rounded-xl">
+                  <button
+                    onClick={() => localStorage.clear()}
+                    className="w-full h-12 font-medium border-gray-500/30 border-2 rounded-xl"
+                  >
                     <div>กลับไปหน้าหลัก</div>
                   </button>
                 </Link>
-                <button className="w-full h-12 font-medium bg-gradient-to-r from-[#E4CCFF] to-[#C2DBFF] rounded-xl">
+                {/* <button
+                  onClick={downloadImg}
+                  className="w-full h-12 font-medium bg-gradient-to-r from-[#E4CCFF] to-[#C2DBFF] rounded-xl"
+                >
                   <div className="">บันทึกรูปภาพ</div>
-                </button>
+                </button> */}
+                <a
+                  href={`/mystery-market/assets/result/ig/${data.name}.png`}
+                  target="_blank"
+                  download={data.name}
+                  rel="noreferrer noopener"
+                  className="w-full"
+                >
+                  <button className="w-full h-12 font-medium bg-gradient-to-r from-[#E4CCFF] to-[#C2DBFF] rounded-xl">
+                    <div className="">บันทึกรูปภาพ</div>
+                  </button>
+                </a>
               </div>
               <div className="pt-8">
                 <SocialMedia />
@@ -156,12 +185,12 @@ export default function Page({ params }: { params: { slug: TitleKeys } }) {
               width={36}
               height={36}
             />
-            <div className="bg-primary-white w-full max-w-md pb-8">
+            <div className="bg-primary-white w-full max-w-lg pb-8">
               <Credit />
             </div>
           </div>
         </div>
-        <div className="text-secondary-dark h-screen gap-4 py-4 flex flex-col items-center mx-auto max-w-md w-full bg-primary-white "></div>
+        <div className="text-secondary-dark h-screen gap-4 py-4 flex flex-col items-center mx-auto max-w-lg w-full bg-primary-white "></div>
         {/* <div className="text-secondary-dark h-screen gap-4 py-4 flex flex-col items-center mx-auto max-w-md w-full bg-primary-white "></div> */}
       </div>
     </>
@@ -182,7 +211,7 @@ function Credit() {
         />
         <div className="text-lg font-bold pt-1">Project Manager</div>
         <div className="flex flex-col items-center gap-1">
-          <div className="text-xs ">Theerapong Mungcharoen</div>
+          <div className="text-xs ">Lullalil Jupanich</div>
         </div>
         <div className="text-lg font-bold pt-4">Story</div>
         <div className="flex flex-col items-center gap-1">
@@ -192,13 +221,13 @@ function Credit() {
         </div>
         <div className="text-lg font-bold pt-4">Graphic Designer</div>
         <div className="flex flex-col items-center gap-1">
-          <div className="text-xs ">Lullalil Jupanich</div>
           <div className="text-xs ">Kanpitcha Chamaiklang</div>
           <div className="text-xs ">Theerapong Mungcharoen</div>
         </div>
         <div className="text-lg font-bold pt-4">UX/UI</div>
         <div className="flex flex-col items-center gap-1">
           <div className="text-xs ">Natdanai Pinaves</div>
+          <div className="text-xs ">Yada Rattanavaraha</div>
           <div className="text-xs ">Theerapong Mungcharoen</div>
           <div className="text-xs ">Panupong Lertveeranontarat</div>
           <div className="text-xs ">Karitthorn Bamrungpipattanporn</div>
