@@ -20,8 +20,8 @@ export default function TheFlower() {
     forgetmenot: number
   ): string {
     const flowerCounts = [
-      { name: "sunflower", count: sunflower },
       { name: "rose", count: rose },
+      { name: "sunflower", count: sunflower },
       { name: "lavender", count: lavender },
       { name: "lily", count: lily },
       { name: "forgetmenot", count: forgetmenot },
@@ -31,14 +31,6 @@ export default function TheFlower() {
 
     return flowerCounts.find((flower) => flower.count === maxCount)?.name || "";
   }
-
-  const highestFlowerCount = getHighestFlower(
-    sunflower,
-    roses,
-    lavender,
-    lilly,
-    forgetmenot
-  );
 
   const router = useRouter();
 
