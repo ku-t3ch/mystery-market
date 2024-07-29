@@ -201,7 +201,7 @@ const Story = () => {
           autoPlay
           loop
           muted
-          className="absolute object-cover max-w-md w-full h-[calc(100dvh)] right-0 left-0 m-auto"
+          className="absolute object-cover max-w-lg w-full h-[calc(100dvh)] right-0 left-0 m-auto"
           poster="/mystery-market/assets/background/rainbackground-resize.webp"
           playsInline
           preload="auto"
@@ -217,7 +217,7 @@ const Story = () => {
         <video /* hardcode พื้นหลัง video rainbackground.mp4 */
           autoPlay
           muted
-          className="absolute object-cover max-w-md w-full h-[calc(100dvh)] right-0 left-0 m-auto"
+          className="absolute object-cover max-w-lg w-full h-[calc(100dvh)] right-0 left-0 m-auto"
           poster="/mystery-market/assets/background/boatvod1_000.webp"
           playsInline
         >
@@ -238,7 +238,7 @@ const Story = () => {
             }`}
           >
             {item.background && (
-              <div className="absolute object-cover max-w-md w-full h-[calc(100dvh)] inset-0 right-0 left-0 m-auto">
+              <div className="absolute object-cover max-w-lg w-full h-[calc(100dvh)] inset-0 right-0 left-0 m-auto">
                 <Image
                   priority
                   src={item.background!}
@@ -250,7 +250,7 @@ const Story = () => {
             )}
 
             {/* back button */}
-            <div className="relative mx-auto max-w-md ">
+            <div className="relative mx-auto max-w-lg ">
               <div
                 className={`absolute z-[999] left-8 top-10 ${
                   currentScene == 0 ? "hidden" : ""
@@ -265,10 +265,10 @@ const Story = () => {
             </div>
 
             <div
-              // className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto ${
+              // className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-lg w-full py-8 text-center right-0 left-0 m-auto ${
               //   isCurrentScene ? "fadeIn" : "fadeOut"
               // }`}
-              className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-md w-full py-8 text-center right-0 left-0 m-auto`}
+              className={`relative flex flex-col items-center justify-center h-[calc(100dvh)] max-w-lg w-full py-8 text-center right-0 left-0 m-auto`}
               onClick={() => goToScene(item.go!)}
             >
               {/* logo */}
