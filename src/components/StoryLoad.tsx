@@ -79,20 +79,20 @@ const Story = () => {
   const goToPreviousScene = () => {
     if (screenKeep.length > 1) {
       const newScreenKeep = screenKeep.slice(0, -1);
-      setScreenKeep(newScreenKeep);
       setCurrentScene(newScreenKeep[newScreenKeep.length - 1].scene_id);
-      setName(newScreenKeep[newScreenKeep.length - 1].getName);
-      setIsAlone(newScreenKeep[newScreenKeep.length - 1].isAlone);
-      setSunflower(newScreenKeep[newScreenKeep.length - 1].sunflower);
-      setRoses(newScreenKeep[newScreenKeep.length - 1].roses);
-      setLavender(newScreenKeep[newScreenKeep.length - 1].lavender);
-      setLilly(newScreenKeep[newScreenKeep.length - 1].lilly);
-      setForgetmenot(newScreenKeep[newScreenKeep.length - 1].forgetmenot);
-      setDog(newScreenKeep[newScreenKeep.length - 1].dog);
-      setCat(newScreenKeep[newScreenKeep.length - 1].cat);
-      setSelectedAnimal(newScreenKeep[newScreenKeep.length - 1].selectedAnimal);
-      setFirstFlower(newScreenKeep[newScreenKeep.length - 1].firstFlower);
-      setReality(newScreenKeep[newScreenKeep.length - 1].reality);
+      setName(screenKeep[screenKeep.length - 1].getName);
+      setIsAlone(screenKeep[screenKeep.length - 1].isAlone);
+      setSunflower(screenKeep[screenKeep.length - 1].sunflower);
+      setRoses(screenKeep[screenKeep.length - 1].roses);
+      setLavender(screenKeep[screenKeep.length - 1].lavender);
+      setLilly(screenKeep[screenKeep.length - 1].lilly);
+      setForgetmenot(screenKeep[screenKeep.length - 1].forgetmenot);
+      setDog(screenKeep[screenKeep.length - 1].dog);
+      setCat(screenKeep[screenKeep.length - 1].cat);
+      setSelectedAnimal(screenKeep[screenKeep.length - 1].selectedAnimal);
+      setFirstFlower(screenKeep[screenKeep.length - 1].firstFlower);
+      setReality(screenKeep[screenKeep.length - 1].reality);
+      setScreenKeep(newScreenKeep);
     }
   };
 

@@ -106,7 +106,6 @@ export default function EndingNote() {
     result =
       "คุณตื่นมาโดยตัวคนเดียว ห้องทุกอย่างก็เป็นเหมือนเดิม ไม่มีอะไรเปลี่ยนแปลง";
   }
-  console.log(result);
   return (
     <>
       <div className="choice-story px-8">{result}</div>

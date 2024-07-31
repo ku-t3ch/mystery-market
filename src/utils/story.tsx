@@ -57,12 +57,13 @@ export const story: IStory[] = [
       {
         title: "ห้องโมเดิร์น สไตล์ชิคๆ",
         go: 5,
+        sunflower: 1,
         firstFlower: "sunflower",
       },
       {
         title: "ห้องมินิมอล สไตล์น่ารัก",
         go: 5,
-        roses: 1,
+        roses: 2,
         firstFlower: "roses",
       },
       {
@@ -121,7 +122,7 @@ export const story: IStory[] = [
     title: `อ่านข้อความเลยมั้ย`,
     choice: [
       { title: "อ่านข้อความ", go: 10 },
-      { title: "ค่อยอ่านอีกที", go: 8.4 }, // bad ending
+      { title: "ค่อยอ่านอีกที", go: 8.4, forgetmenot: 1 }, // bad ending
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
@@ -167,7 +168,7 @@ export const story: IStory[] = [
         title: "ได้ ๆ ไปกัน",
         go: 13,
         isAlone: false,
-        roses: 1,
+        roses: 2,
       }, // extrovert
       {
         title: "ไว้วันหลังนะ",
@@ -184,8 +185,8 @@ export const story: IStory[] = [
     story:
       "หลังจากที่คุณปฎิเสธไปแล้ว<br/>คุณก็ได้ลองค้นหาข้อมูลตลาดน้ำแห่งนี้<br/>พบว่ามีของที่น่าสนใจอยู่ สิ่งนั้นคือ",
     choice: [
-      { title: "บอร์ดเกมใหม่ที่คุณสนใจ", go: 12, sunflower: 1 },
-      { title: "อุปกรณ์วาดรูปสำหรับเด็ก", go: 12, roses: 1 },
+      { title: "บอร์ดเกมใหม่ที่คุณสนใจ", go: 12, sunflower: 2 },
+      { title: "อุปกรณ์วาดรูปสำหรับเด็ก", go: 12, roses: 2 },
       {
         title: "หนังสือมือสองเกี่ยวกับวัฒนธรรม ท่องเที่ยว",
         go: 12,
@@ -208,8 +209,8 @@ export const story: IStory[] = [
     story:
       "หลังจากที่คุณตกลงไปกับเพื่อนของคุณแล้ว<br/>คุณก็ได้ลองค้นหาข้อมูลตลาดนำ้แห่งนี้<br/>และพบว่ามีของที่น่าสนใจอยู่ สิ่งนั้นคือ",
     choice: [
-      { title: "บอร์ดเกมใหม่ที่คุณสนใจ", go: 14, sunflower: 1 },
-      { title: "อุปกรณ์วาดรูปสำหรับเด็ก", go: 14, roses: 1 },
+      { title: "บอร์ดเกมใหม่ที่คุณสนใจ", go: 14, sunflower: 2 },
+      { title: "อุปกรณ์วาดรูปสำหรับเด็ก", go: 14, roses: 2 },
       {
         title: "หนังสือมือสองเกี่ยวกับวัฒนธรรม ท่องเที่ยว",
         go: 14,
@@ -394,16 +395,15 @@ export const story: IStory[] = [
         title:
           "ขออยู่ในโลกแห่งความฝันและ<br />จินตนาการไม่มีกาลเวลา ไม่มีกฏเกณฑ์ควบคุม",
         go: 213.1,
-        sunflower: 1,
-        roses: 1,
-        lilly: 1,
+        roses: 2,
+        lilly: 2,
       },
       {
         title:
           "ขออยู่ในโลกแห่งความเป็นจริงโดย<br />มีชีวิตที่มั่นคงและได้ทุกอย่างในสิ่งที่มุ่งหวั่ง",
         go: 213.2,
-        forgetmenot: 1,
-        lavender: 1,
+        forgetmenot: 3,
+        lavender: 3,
       },
     ],
     // background: "/mystery-market/assets/background/boatvod1_047.webp",

@@ -24,7 +24,7 @@ export default function Market02() {
       setLilly(lilly + 1);
       gonext = 202;
     } else if (choice == 2) {
-      setSunflower(sunflower + 99);
+      setSunflower(sunflower + 3);
       gonext = 202;
     } else if (choice == 3) {
       gonext = 201;
@@ -35,8 +35,8 @@ export default function Market02() {
       setRoses(roses + 1);
       gonext = 303;
     } else if (choice == 6) {
-      setSunflower(sunflower + 99);
-      setLavender(lavender + 1);
+      setSunflower(sunflower + 5);
+      setLavender(lavender + 2);
       gonext = 303;
     }
     const lastScreenKeep = screenKeep[screenKeep.length - 1];
