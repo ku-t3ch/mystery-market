@@ -21,22 +21,24 @@ export default function Market02() {
   const setSceneNumber = (choice: number) => {
     let gonext = 0;
     if (choice == 1) {
-      setLilly(lilly + 1);
+      setLilly(lilly + 2);
       gonext = 202;
     } else if (choice == 2) {
-      setSunflower(sunflower + 3);
+      setSunflower(sunflower + 4);
+      setLilly(lilly + 1);
       gonext = 202;
     } else if (choice == 3) {
       gonext = 201;
     } else if (choice == 4) {
-      setForgetmenot(forgetmenot + 1);
+      setForgetmenot(forgetmenot + 2);
+      setForgetmenot(lilly + 1);
       gonext = 302;
     } else if (choice == 5) {
-      setRoses(roses + 1);
+      setRoses(roses + 2);
       gonext = 303;
     } else if (choice == 6) {
-      setSunflower(sunflower + 5);
-      setLavender(lavender + 2);
+      setSunflower(sunflower + 6);
+      setLavender(lavender + 3);
       gonext = 303;
     }
     const lastScreenKeep = screenKeep[screenKeep.length - 1];
