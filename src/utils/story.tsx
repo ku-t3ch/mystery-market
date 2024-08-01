@@ -57,7 +57,7 @@ export const story: IStory[] = [
       {
         title: "ห้องโมเดิร์น สไตล์ชิคๆ",
         go: 5,
-        sunflower: 1,
+        sunflower: 2,
         firstFlower: "sunflower",
       },
       {
@@ -69,13 +69,13 @@ export const story: IStory[] = [
       {
         title: "ห้องที่ไม่เป็นระเบียบ ของเต็มห้อง",
         go: 5,
-        lavender: 1,
+        lilly: 2,
         firstFlower: "lavender",
       },
       {
         title: "ห้องที่จัดระเบียบแบ่งเป็นหมวดหมู่",
         go: 5,
-        lilly: 2,
+        lavender: 2,
         firstFlower: "lilly",
       },
       { title: "ห้องที่บรรยากาศเงียบสงบ", go: 5, forgetmenot: 1 },
@@ -122,7 +122,7 @@ export const story: IStory[] = [
     title: `อ่านข้อความเลยมั้ย`,
     choice: [
       { title: "อ่านข้อความ", go: 10 },
-      { title: "ค่อยอ่านอีกที", go: 8.4, forgetmenot: 1 }, // bad ending
+      { title: "ค่อยอ่านอีกที", go: 8.4, forgetmenot: 2 }, // bad ending
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
@@ -190,10 +190,15 @@ export const story: IStory[] = [
       {
         title: "หนังสือมือสองเกี่ยวกับวัฒนธรรม ท่องเที่ยว",
         go: 12,
-        lavender: 1,
+        lavender: 2,
       },
-      { title: "นาฬิกาข้อมือ", go: 12, lilly: 2 },
-      { title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ", go: 12, forgetmenot: 1 },
+      { title: "นาฬิกาข้อมือ", go: 12, lilly: 2, lavender: 1 },
+      {
+        title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ",
+        go: 12,
+        forgetmenot: 1,
+        lilly: 1,
+      },
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
@@ -214,10 +219,15 @@ export const story: IStory[] = [
       {
         title: "หนังสือมือสองเกี่ยวกับวัฒนธรรม ท่องเที่ยว",
         go: 14,
-        lavender: 1,
+        lavender: 2,
       },
-      { title: "นาฬิกาข้อมือ", go: 14, lilly: 2 },
-      { title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ", go: 14, forgetmenot: 1 },
+      { title: "นาฬิกาข้อมือ", go: 14, lilly: 2, lavender: 1 },
+      {
+        title: "กล้องถ่ายรูปสำหรับถ่ายภาพธรรมชาติ",
+        go: 14,
+        forgetmenot: 1,
+        lilly: 1,
+      },
     ],
     background: "/mystery-market/assets/background/roombgdark-resize.webp",
   },
@@ -253,7 +263,7 @@ export const story: IStory[] = [
     story: "มีเสียงบางอย่างออกมาจากกล่อง",
     choice: [
       { title: "ไปดู", go: 202, roses: 1 },
-      { title: "อยู่ที่เดิม", go: 201.1, forgetmenot: 1 },
+      { title: "อยู่ที่เดิม", go: 201.1, forgetmenot: 2 },
     ],
     background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
@@ -404,6 +414,7 @@ export const story: IStory[] = [
         go: 213.2,
         forgetmenot: 3,
         lavender: 3,
+        lilly: 1,
       },
     ],
     // background: "/mystery-market/assets/background/boatvod1_047.webp",
@@ -547,7 +558,7 @@ export const story: IStory[] = [
     title: "มีเสียงบางอย่างออกมาจากกล่อง",
     choice: [
       { title: "ไปดูก็ได้ แต่ไปคนเดียว", go: 303, roses: 1 },
-      { title: "อยู่ที่เดิมกับเพื่อน", go: 303, forgetmenot: 1 },
+      { title: "อยู่ที่เดิมกับเพื่อน", go: 303, forgetmenot: 2 },
     ],
     background: "/mystery-market/assets/background/boatvod1_047.webp",
   },
