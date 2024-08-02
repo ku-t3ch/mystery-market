@@ -50,7 +50,7 @@ export default function Market01() {
       {/* story */}
       {isAlone ? (
         <div className="flex flex-col items-center justify-center h-full w-full">
-          <div className="animate-fade animate-duration-[1500ms] animate-ease-out p-4">
+          <div className="animate-fade animate-duration-[1500ms] p-4">
             คุณเดินไปที่บูธอาหาร
             <br />
             แต่ที่นี่มีอาหารมากมายจนเลือกไม่ถูก
@@ -79,8 +79,8 @@ export default function Market01() {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center h-full w-full mt-[-4rem]">
-          <div className="p-4 animate-fade animate-duration-[1500ms] ">
+        <div className="flex flex-col items-center justify-center h-full w-full">
+          <div className="animate-fade animate-duration-[1500ms] p-4 ">
             คุณและเพื่อนไปที่บูธอาหาร
             <br />
             ที่นี่มีอาหารมากมายจนเลือกไม่ถูก
